@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas Background="#FFFFFFFF" Width="1920" Height="1040" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:iwm="clr-namespace:Ico.Windows.Media;assembly=IcoWPF" xmlns:gwx="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCore" xmlns:script="clr-namespace:Ico.Script;assembly=IcoScriptEngine" xmlns:ic="clr-namespace:Ico.Collections;assembly=IcoCollections" xmlns:it="clr-namespace:Ico.Twx;assembly=TwxViewControl" xmlns:iws="clr-namespace:Ico.WPF.Specialized;assembly=IcoWPFSpecialized" xmlns:iwc="clr-namespace:Ico.Windows.Controls;assembly=IcoWPF" xmlns:idd="clr-namespace:Ico.Data.DataConnector;assembly=IcoDataConnector">
+  <Canvas.Resources>
+    <BitmapImage x:Key="GwxThumbnailImageKey">
+      <iwm:BitmapImageInfo.StreamSource>
+        <iwm:Base64Stream Data="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" />
+      </iwm:BitmapImageInfo.StreamSource>
+    </BitmapImage>
+  </Canvas.Resources>
+  <gwx:GwxDocument.GwxDocument>
+    <gwx:GwxDocument FileVersion="10.93.175.00" ScanRate="500">
+      <gwx:GwxDocument.ScriptCodeManager>
+        <script:ScriptCodeManager>
+          <script:ScriptCodeManager.Scripts>
+            <script:ScriptCode Name="JScriptDotNetGlobalVariablesCode" Type="JScriptNet" EditorBrowsable="Never">
+              <x:XData><![CDATA[
+var ThisWindow : Ico.Gwx.GwxRuntimeViewControl;
+var ThisDocument : Ico.Gwx.GwxDocument;
+var ThisConfiguration : Ico.Gwx.GwxConfiguration;
+]]></x:XData>
+            </script:ScriptCode>
+            <script:ScriptCode Name="ProcessPoint1Code" Type="JScriptNet">
+              <x:XData><![CDATA[
+function ProcessPoint1_DataUpdated(sender : System.Object, e : System.EventArgs)
+{
+	var ppt = ThisConfiguration.GetDynamicObjectByName("Status");
+	var status = ppt.GetValueOfPrimaryDataSource();
+	
+	if (status != 1){
+		ThisWindow.Open("Display2.gdfx", WindowTargetType.Self);
+	}
+
+	
+}
+]]></x:XData>
+            </script:ScriptCode>
+          </script:ScriptCodeManager.Scripts>
+          <script:ScriptCodeManager.AssemblyReferences>
+            <ic:AssemblyReference AssemblyName="mscorlib" />
+            <ic:AssemblyReference AssemblyName="System" />
+            <ic:AssemblyReference AssemblyName="System.Core" />
+            <ic:AssemblyReference AssemblyName="System.Data" />
+            <ic:AssemblyReference AssemblyName="System.Xml" />
+            <ic:AssemblyReference AssemblyName="System.Drawing" />
+            <ic:AssemblyReference AssemblyName="System.Windows.Forms" />
+            <ic:AssemblyReference AssemblyName="WindowsBase" />
+            <ic:AssemblyReference AssemblyName="PresentationCore" />
+            <ic:AssemblyReference AssemblyName="PresentationFramework" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCore" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCoreCommands" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeViewControl" />
+            <ic:AssemblyReference AssemblyName="GwxConfigCore" />
+            <ic:AssemblyReference AssemblyName="IcoComponentModel" />
+            <ic:AssemblyReference AssemblyName="IcoFwxClientWrapper" />
+            <ic:AssemblyReference AssemblyName="TwxViewControl" AssemblyCodebase="file:///C:/Program Files/ICONICS/GENESIS64/Components/TwxViewControl.DLL" />
+            <ic:AssemblyReference AssemblyName="IcoWPFSpecialized" AssemblyCodebase="file:///C:/Program Files/ICONICS/GENESIS64/Components/IcoWPFSpecialized.DLL" />
+          </script:ScriptCodeManager.AssemblyReferences>
+        </script:ScriptCodeManager>
+      </gwx:GwxDocument.ScriptCodeManager>
+    </gwx:GwxDocument>
+  </gwx:GwxDocument.GwxDocument>
+  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label1" Width="105" Height="80" Canvas.Left="134" Canvas.Top="367" gwx:GwxProperties.Stretch="Uniform">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxProcessPoint AnimationMode="Analog" Name="Status" DataSource="@ICONICS.Simulator.1\EnergyPlus.Control.Status.Value">
+            <gwx:GwxProcessPoint.EventBindings>
+              <script:ScriptEventBindings>
+                <script:ScriptEventBindings.EventBindings>
+                  <x:Array Type="script:ScriptEventBinding">
+                    <script:ScriptEventBinding EventName="DataUpdated" MethodName="ProcessPoint1_DataUpdated" ScriptType="JScriptNet" />
+                  </x:Array>
+                </script:ScriptEventBindings.EventBindings>
+              </script:ScriptEventBindings>
+            </gwx:GwxProcessPoint.EventBindings>
+          </gwx:GwxProcessPoint>
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" LayoutTransform="4.88721804511278,0,0,4.88721804511278,0,0" />
+  </Label>
+  <it:TwxViewControl FileVersion="10.93.175.00" FontFamily="Segoe UI" FontSize="12" Width="358" Height="300" AllowDrop="True" Canvas.Left="94" Canvas.Top="36">
+    <it:TwxViewControl.Items>
+      <iwc:MultipleTabItem IsSelected="True" Header="Tab">
+        <it:TwxChartComponent LegendHeaderBorder="#FFAAAAAA" LegendHeaderForeground="#FF000000" LegendHeaderBackground="#FFDDDDDD" LegendActiveSelectionBackground="#883399FF" LegendActiveSelectionForeground="#FFFFFFFF" LegendInactiveSelectionBackground="#88EEEEEE" LegendInactiveSelectionForeground="#FF333333" LegendRowBackground="{x:Null}" LegendRowForeground="#FF000000" LegendBackground="#FFFFFFFF" ShowLegend="True" Title="ChartView" ChartBackground="#FFFFFFFF" ChartInnerBackground="#FFFFFFFF" ChartInnerBorder="#FF000000" SplitterColor="#FFF2F2F2" CursorWidth="3" CursorStroke="#883399FF" SecondCursorStroke="#88F79646" ShowCursorInFreezeMode="True" GridXStroke="#FFAAAAAA" GridYStroke="#FFAAAAAA" SummaryTrendPeriodAlignment="Minute" SummaryTrendPeriodValue="15" SummaryChartWidth="100" SummaryCursorStroke="#88444444" SummaryCursorFill="#88CCCCCC" ShowSummaryScrollbar="False" TrendPeriodAlignment="Minute" TrendPeriodValue="5" RefreshRate="00:00:00.0500000" SamplingInterval="00:00:00.0500000" HistoryRefreshRateAlignment="Second" HistoryRefreshRateValue="5" ZoomFill="#883399FF" FontStyle="Normal" FontWeight="Normal">
+          <it:TwxChartComponent.SummaryTrendAxis>
+            <it:TwxAxis MajorTickmarks="3" LabelForeground="#FF000000" />
+          </it:TwxChartComponent.SummaryTrendAxis>
+          <it:TwxChartComponent.Series>
+            <it:TwxSeries Settings="{x:Null}">
+              <it:TwxSeries.Pens>
+                <it:TwxChartPen AutoQualityStyle="True" InheritQualityPlotMode="True" ShowPenMarker="True" RangeMinimumMode="Manual" RangeMaximumMode="Manual" RangeMode="Default" ManualRangeMaximumTag="1500000" Stroke="#FF276AAD" Fill="#FF8EBAE6">
+                  <it:TwxChartPen.DataConnectionConfiguration>
+                    <idd:DataConnectorConfiguration PointName="@ICONICS.Simulator.1\EnergyPlus.Outputs.WholeBuilding.FacilityTotalElectricDemandPower.Value" RawData="version=2;" />
+                  </it:TwxChartPen.DataConnectionConfiguration>
+                </it:TwxChartPen>
+              </it:TwxSeries.Pens>
+            </it:TwxSeries>
+          </it:TwxChartComponent.Series>
+        </it:TwxChartComponent>
+      </iwc:MultipleTabItem>
+    </it:TwxViewControl.Items>
+  </it:TwxViewControl>
+  <it:TwxViewControl FileVersion="10.93.175.00" FontFamily="Segoe UI" FontSize="12" Width="350" Height="240" AllowDrop="True" Canvas.Left="578" Canvas.Top="57">
+    <it:TwxViewControl.Items>
+      <iwc:MultipleTabItem IsSelected="True" Header="Tab">
+        <it:TwxChartComponent LegendHeaderBorder="#FFAAAAAA" LegendHeaderForeground="#FF000000" LegendHeaderBackground="#FFDDDDDD" LegendActiveSelectionBackground="#883399FF" LegendActiveSelectionForeground="#FFFFFFFF" LegendInactiveSelectionBackground="#88EEEEEE" LegendInactiveSelectionForeground="#FF333333" LegendRowBackground="{x:Null}" LegendRowForeground="#FF000000" LegendBackground="#FFFFFFFF" ShowLegend="True" Title="ChartView" ChartBackground="#FFFFFFFF" ChartInnerBackground="#FFFFFFFF" ChartInnerBorder="#FF000000" SplitterColor="#FFF2F2F2" CursorWidth="3" CursorStroke="#883399FF" SecondCursorStroke="#88F79646" ShowCursorInFreezeMode="True" GridXStroke="#FFAAAAAA" GridYStroke="#FFAAAAAA" SummaryTrendPeriodAlignment="Minute" SummaryTrendPeriodValue="15" SummaryChartWidth="100" SummaryCursorStroke="#88444444" SummaryCursorFill="#88CCCCCC" ShowSummaryScrollbar="False" TrendPeriodAlignment="Minute" TrendPeriodValue="5" RefreshRate="00:00:00.0500000" SamplingInterval="00:00:00.0500000" HistoryRefreshRateAlignment="Second" HistoryRefreshRateValue="5" ZoomFill="#883399FF" FontStyle="Normal" FontWeight="Normal">
+          <it:TwxChartComponent.SummaryTrendAxis>
+            <it:TwxAxis MajorTickmarks="3" LabelForeground="#FF000000" />
+          </it:TwxChartComponent.SummaryTrendAxis>
+          <it:TwxChartComponent.Series>
+            <it:TwxSeries Settings="{x:Null}">
+              <it:TwxSeries.Pens>
+                <it:TwxChartPen AutoQualityStyle="True" InheritQualityPlotMode="True" ShowPenMarker="True" RangeMinimumMode="Default" RangeMaximumMode="Manual" RangeMode="Default" ManualRangeMaximumTag="30" Stroke="#FFB32225" Fill="#FFE98B8D">
+                  <it:TwxChartPen.DataConnectionConfiguration>
+                    <idd:DataConnectorConfiguration PointName="@ICONICS.Simulator.1\EnergyPlus.Inputs.clgsetp.Value" RawData="version=2;" />
+                  </it:TwxChartPen.DataConnectionConfiguration>
+                </it:TwxChartPen>
+                <it:TwxChartPen AutoQualityStyle="True" InheritQualityPlotMode="True" ShowPenMarker="True" RangeMode="Default" Stroke="#FF007FFF" Fill="#FF002AFF">
+                  <it:TwxChartPen.DataConnectionConfiguration>
+                    <idd:DataConnectorConfiguration PointName="@ICONICS.Simulator.1\EnergyPlus.Inputs.cwsetp.Value" RawData="version=2;" />
+                  </it:TwxChartPen.DataConnectionConfiguration>
+                </it:TwxChartPen>
+                <it:TwxChartPen AutoQualityStyle="True" InheritQualityPlotMode="True" ShowPenMarker="True" RangeMode="Default" Stroke="#FFFFFF00" Fill="#FFFFFF66">
+                  <it:TwxChartPen.DataConnectionConfiguration>
+                    <idd:DataConnectorConfiguration PointName="@ICONICS.Simulator.1\EnergyPlus.Inputs.lilsetp.Value" RawData="version=2;" />
+                  </it:TwxChartPen.DataConnectionConfiguration>
+                </it:TwxChartPen>
+              </it:TwxSeries.Pens>
+            </it:TwxSeries>
+          </it:TwxChartComponent.Series>
+        </it:TwxChartComponent>
+      </iwc:MultipleTabItem>
+    </it:TwxViewControl.Items>
+  </it:TwxViewControl>
+  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label2" Width="310" Height="76" Canvas.Left="609" Canvas.Top="369" gwx:GwxProperties.Stretch="Uniform">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxProcessPoint DecimalPlaces="3" AnimationMode="Analog" DataSource="@ICONICS.Simulator.1\EnergyPlus.Control.TimeStep.Value" />
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="*.???" TextTrimming="CharacterEllipsis" LayoutTransform="4.63659147869674,0,0,4.63659147869674,0,0" />
+  </Label>
+</Canvas>
