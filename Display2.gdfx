@@ -3,12 +3,12 @@
   <Canvas.Resources>
     <BitmapImage x:Key="GwxThumbnailImageKey">
       <iwm:BitmapImageInfo.StreamSource>
-        <iwm:Base64Stream Data="iVBORw0KGgoAAAANSUhEUgAAAQAAAACKCAYAAABFLpRsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVOSURBVHhe7dtPSFRrHIfx3xkiA9HCglwpSmXiooSghU4EEhIYbVu0EEMpJMGWQeDWzRhEC0NciKuwcuMiMZXatBMrEltEESIYxPRHcIzOued3GA/em7cbUsLt+3xgaOb8nZl8n3nPoEEUMwCSMsV/AQgiAIAwAgAIIwCAMAIACCMAgDACAAgjAIAwAgAI23YAvnz5En369Omnf4twaWkp+vz583fbf/36NSoUCunyrbZxvn/xrrxLly5FQRCY3+7cucP7gm3b1q8Cf/z4MRobG7OWlhZbWFjwGPgATdY1NDT4oLb5+XmrqKhIl+Xzefv27Zu9fv3a9u/fb3V1dfbhwwdbXl62kpIS27Vrl01PT1tTU1OyPgxDe/XqlZ07d85WVlaS/efm5qy2tjbd9vTp07Zv377kfMX9guSEv1Aul4uuXbuWHvfGjRvRs2fP7Pz583by5Em7fv168vxHRkZsz549v/z8/7S+vh61tbXZ5ORkeq74fY1aW1ttampqy/PPzs5G9+7ds1u3bv3254f/l20H4MGDB9bc3Gzj4+MWzwSsvr4+Wffy5Us7cOCAZTKZJABHjx61yspKe/jwYTLYy8vLk+0OHz5sL168SPZdW1tLBnU2m7XFxcVkUL958yYJgR/r1KlTyf5+PA+Bh8G3ffv2bfLYtzlx4oQdP378l/6AX7hwIfLjHzt2zPr7+5Nj+wylrKwsiJ9TNDExYX7/5s2bkb/enp6e3z7APAClpaUevfRc/lyePHkSxO9h5O9lTU2NvXv3Lnm8urrqgUq2PXPmTHT27Fnz/bu6uoKBgYHkWO3t7ek2g4ODka/z+/jz8cdAPxAP+uj58+d2+fJlj106KO7fvx89evTIbt++HfiA9FmKzwAOHjy4IwPHz+kD1ge0zwT+bQbglwo+Szly5IhtzAA2Bv3mAHgkNpYVd4UIvgT8gd7eXhsdHQ02D/73799Hd+/eTQa/P+7s7PTr8B0b/G737t0ebvNP86tXr34XcJ8R+PcDw8PDP/Wc4tcZxK/TDh06xIeBGALwAz7QindTe/futStXrhQfmV28eNGqq6t3bPBv1tjYmFwybeaf6n7J4oHo6OjYckD7rMb5JdiGx48fB0NDQ1sGBX8wvwTAf+vr6wvjaXSYz+fDeLodFhdH3d3dYTz1Th//bjMzM6H/t/ktk8mET58+Tc6dzWbD+Jo/LBQK6Xq/xdf06bL4kuFv66uqqkJfn8vlkmWbjwcNfAcACOMSABBGAABhBAAQRgAAYQQAEEYAAGEEABBGAABhBAAQRgAAYQQAEEYAAGEEABBGAABhBAAQRgAAYQQAEEYAAGEEABBGAABhBAAQRgAAYQQAEEYAAGEEABBGAABhBAAQRgAAYQQAEEYAAGEEABBGAABhBAAQRgAAYQQAEEYAAGEEABBGAABhBAAQRgAAYQQAEEYAAGEEABBGAABhBAAQRgAAYQQAEEYAAGEEABBGAABhBAAQRgAAYQQAEEYAAGEEABBGAABhBAAQRgAAYQQAEEYAAGEEABBGAABhBAAQRgAAYQQAEEYAAGEEABBGAABhBAAQRgAAYQQAEEYAAGEEABBGAABhBAAQRgAAYQQAEEYAAGEEABBGAABhBAAQRgAAYQQAEEYAAGEEABBGAABhBAAQRgAAYQQAEEYAAGEEABBGAABhBAAQRgAAYQQAEEYAAGEEABBGAABhBAAQRgAAYQQAEEYAAGEEABBGAABhBAAQRgAAYQQAEEYAAGEEABBGAABhBAAQRgAAYQQAEEYAAGEEABBGAABhBAAQRgAAYQQAEEYAAFlmfwGu7DKHCtfuoQAAAABJRU5ErkJggg==" />
+        <iwm:Base64Stream Data="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" />
       </iwm:BitmapImageInfo.StreamSource>
     </BitmapImage>
   </Canvas.Resources>
   <gwx:GwxDocument.GwxDocument>
-    <gwx:GwxDocument FileVersion="10.93.175.00" ScanRate="500">
+    <gwx:GwxDocument DefaultView="0,0,1087.05741936365,576.862668026877" FileVersion="10.93.175.00" ScanRate="500">
       <gwx:GwxDocument.ScriptCodeManager>
         <script:ScriptCodeManager>
           <script:ScriptCodeManager.Scripts>
@@ -37,14 +37,14 @@ var ThisConfiguration : Ico.Gwx.GwxConfiguration;
       </gwx:GwxDocument.ScriptCodeManager>
     </gwx:GwxDocument>
   </gwx:GwxDocument.GwxDocument>
-  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Width="284" Height="73" Canvas.Left="99" Canvas.Top="52" gwx:GwxProperties.Stretch="Uniform">
-    <TextBlock Text="Current Simulation Status" LayoutTransform="2.02988023212742,0,0,2.02988023212742,0,0" />
+  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Width="351.834478" Height="73" gwx:GwxProperties.Stretch="Uniform" Canvas.Left="45.281367" Canvas.Top="28.865698">
+    <TextBlock Text="Waiting For Simulation To Start" LayoutTransform="2.09004898300249,0,0,2.09004898300249,0,0" />
   </Label>
-  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label1" Width="219" Height="81" Canvas.Left="466" Canvas.Top="62" gwx:GwxProperties.Stretch="Uniform">
+  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label1" Width="142.539172" Height="53.94463" gwx:GwxProperties.Stretch="Uniform" Canvas.Left="455.61613" Canvas.Top="177.615462">
     <gwx:GwxDynamicGroup.GwxDynamicGroup>
       <gwx:GwxDynamicGroup>
         <gwx:GwxDynamicGroup.DynamicsList>
-          <gwx:GwxProcessPoint AnimationMode="Analog" Name="Status" DataSource="@ICONICS.Simulator.1\EnergyPlus.Control.Status.Value">
+          <gwx:GwxProcessPoint AnimationMode="Analog" Name="Status" DataSource="@Matrikon.OPC.Simulation.1\EPSimServer.EnergyPlus.Control.Status.Value">
             <gwx:GwxProcessPoint.EventBindings>
               <script:ScriptEventBindings>
                 <script:ScriptEventBindings.EventBindings>
@@ -58,9 +58,22 @@ var ThisConfiguration : Ico.Gwx.GwxConfiguration;
         </gwx:GwxDynamicGroup.DynamicsList>
       </gwx:GwxDynamicGroup>
     </gwx:GwxDynamicGroup.GwxDynamicGroup>
-    <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" LayoutTransform="4.94987468671679,0,0,4.94987468671679,0,0" />
+    <TextBlock Text="*.??" TextTrimming="CharacterEllipsis" LayoutTransform="3.25467606516291,0,0,3.25467606516291,0,0" />
   </Label>
-  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Width="298" Height="101" Canvas.Left="756" Canvas.Top="51" gwx:GwxProperties.Stretch="Uniform">
-    <TextBlock Text="Status" LayoutTransform="5.70175438596491,0,0,5.70175438596491,0,0" />
+  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Width="295.844589" Height="53.130473" gwx:GwxProperties.Stretch="Uniform" Canvas.Left="59.796289" Canvas.Top="113.122815">
+    <TextBlock Text="Simulation Days:" LayoutTransform="2.70241058897243,0,0,2.70241058897243,0,0" />
+  </Label>
+  <Label BorderBrush="#FF000000" BorderThickness="1,1,1,1" Background="#FFFFFFFF" Foreground="#FF000000" FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Padding="1,1,1,1" Name="Label2" Width="112.338601" Height="42.935696" gwx:GwxProperties.Stretch="Uniform" Canvas.Left="485.232179" Canvas.Top="122.141272">
+    <gwx:GwxDynamicGroup.GwxDynamicGroup>
+      <gwx:GwxDynamicGroup>
+        <gwx:GwxDynamicGroup.DynamicsList>
+          <gwx:GwxProcessPoint DecimalPlaces="0" AnimationMode="Analog" DataSource="@Matrikon.OPC.Simulation.1\EPSimServer.EnergyPlus.Control.SimDays.Value" LowLimitSource="0" HighLimitSource="31" DataComparison="BetweenOrEqualLimits" Control="True" />
+        </gwx:GwxDynamicGroup.DynamicsList>
+      </gwx:GwxDynamicGroup>
+    </gwx:GwxDynamicGroup.GwxDynamicGroup>
+    <TextBlock Text="*" TextTrimming="CharacterEllipsis" LayoutTransform="2.43957994987469,0,0,2.43957994987469,0,0" />
+  </Label>
+  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Width="239.124854" Height="49.30648" gwx:GwxProperties.Stretch="Uniform" Canvas.Left="75.695864" Canvas.Top="182.642313">
+    <TextBlock Text="Simulation Status" LayoutTransform="2.46281203007519,0,0,2.46281203007519,0,0" />
   </Label>
 </Canvas>

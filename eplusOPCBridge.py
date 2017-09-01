@@ -3,17 +3,17 @@ import pyEp
 import time
 
 opc = OpenOPC.open_client()
-opc.connect('ICONICS.Simulator')
-print("Connected to ICONICS.Simulator")
+opc.connect('Matrikon.OPC.Simulation.1')
+print("Connected to Matrikon.Simulator")
 
-input_tags = opc.list('EnergyPlus.Inputs.*')
-output_tags = opc.list('EnergyPlus.Outputs.*.*', recursive=True)
+input_tags = opc.list('EPSimServer.EnergyPlus.Inputs.*')
+output_tags = opc.list('EPSimServer.EnergyPlus.Outputs.*.*', recursive=True)
 opc.read(input_tags, group = 'inputs')
 
 
 pyEp.set_bcvtb_home('C:\Python27\Lib\site-packages\pyEp\\bcvtb')
 pyEp.set_energy_plus_dir('C:\EnergyPlusV8-1-0\\')
-path_to_buildings = 'C:\Users\ICONICS_USER\Documents\EplusBuildings'
+path_to_buildings = 'C:\Users\Expresso Logic\Documents\GitHub\DPC-IAX-Iconics\EplusBuildings'
 eps = []
 timesteps = []
 
@@ -24,7 +24,8 @@ i = 0
 command = ""
 prev_command = ""
 while True:
-	command,_,_ = opc.read('EnergyPlus.Control.Status')
+	command,_,_ = opc.read('EPSimServer.EnergyPlus.Control.Status')
+	command = int(command)
 	if command is not prev_command:
 		if command is 0: #setup
 			print("Setup")
@@ -61,9 +62,25 @@ while True:
 				print(timesteps[idx])
 			output = ep.decode_packet_simple(ep.read())
 			power = output[0]
-			opc.write(('EnergyPlus.Outputs.WholeBuilding.FacilityTotalElectricDemandPower', power))
+			time_of_day = output[1]
+			day_of_week = output[2]
+			bot_temp = output[13]
+			mid_temp = output[17]
+			top_temp = output[21]
+
+
+			if round(float(time_of_day), 2).is_integer():
+				print("Hour: " + str(time_of_day) + " " + str(timesteps[idx]))
+
+			opc.write(('EPSimServer.EnergyPlus.Outputs.WholeBuilding.FacilityTotalElectricDemandPower', power))
+			opc.write(('EPSimServer.EnergyPlus.Outputs.EMS.DayOfWeek', day_of_week))
+			opc.write(('EPSimServer.EnergyPlus.Outputs.EMS.TimeOfDay', time_of_day))
+			opc.write(('EPSimServer.EnergyPlus.Outputs.ZoneTemperature.Perimeter_bot_ZN_2', bot_temp))
+			opc.write(('EPSimServer.EnergyPlus.Outputs.ZoneTemperature.Perimeter_mid_ZN_2', mid_temp))
+			opc.write(('EPSimServer.EnergyPlus.Outputs.ZoneTemperature.Perimeter_top_ZN_2', top_temp))
+
 			#Wait for controller to update to next time step
-			new_time_step, status, _ = opc.read('EnergyPlus.Control.TimeStep')		
+			new_time_step, status, _ = opc.read('EPSimServer.EnergyPlus.Control.TimeStep')		
 			if status is 'Error':
 				print("Error Reading TimeStep")
 				continue
@@ -73,8 +90,9 @@ while True:
 			# print(int(new_time_step))
 			start_w = time.clock()
 			while int(timesteps[idx]) == int(new_time_step):
-				new_time_step, status, _ = opc.read('EnergyPlus.Control.TimeStep')
-				temp_command,_,_ = opc.read('EnergyPlus.Control.Status')
+				new_time_step, status, _ = opc.read('EPSimServer.EnergyPlus.Control.TimeStep')
+				temp_command,_,_ = opc.read('EPSimServer.EnergyPlus.Control.Status')
+				temp_command = int(temp_command)
 				if temp_command is not command:
 					print("Got Interrupt")
 					break
@@ -82,9 +100,9 @@ while True:
 			wait_total_time = wait_total_time + (end_w - start_w)
 			#Read new inputs from the controller and give them to EnergyPlus
 			
-			cw,_,_ = opc.read('EnergyPlus.Inputs.cwsetp')
-			lil,_,_ = opc.read('EnergyPlus.Inputs.lilsetp')
-			clg,_,_ = opc.read('EnergyPlus.Inputs.clgsetp')
+			cw,_,_ = opc.read('EPSimServer.EnergyPlus.Inputs.cwsetp')
+			lil,_,_ = opc.read('EPSimServer.EnergyPlus.Inputs.lilsetp')
+			clg,_,_ = opc.read('EPSimServer.EnergyPlus.Inputs.clgsetp')
 			ep.write(ep.encode_packet_simple([clg, cw, lil], new_time_step))
 			timesteps[idx] = new_time_step
 			end = time.clock()
