@@ -2014,29 +2014,3 @@
   HEATSYS1 BOILER:Boiler Ancillary Electric Energy
 
  For Meter=Boiler Parasitic:Heating:Electricity [J], ResourceType=Electricity, EndUse=Heating, contents are:
-  HEATSYS1 BOILER:Boiler Ancillary Electric Energy
-
- For Meter=HeatRejection:Electricity [J], ResourceType=Electricity, EndUse=HeatRejection, contents are:
-  TOWERWATERSYS COOLTOWER:Cooling Tower Fan Electric Energy
-
- For Meter=HeatRejection:Water [m3], ResourceType=Water, EndUse=HeatRejection, contents are:
-  TOWERWATERSYS COOLTOWER:Cooling Tower Make Up Water Volume
-
- For Meter=HeatRejection:MainsWater [m3], ResourceType=MainsWater, EndUse=HeatRejection, contents are:
-  TOWERWATERSYS COOLTOWER:Cooling Tower Make Up Mains Water Volume
-
- For Meter=Pumps:Electricity [J], ResourceType=Electricity, EndUse=Pumps, contents are:
-  COOLSYS1 PUMP:Pump Electric Energy
-  HEATSYS1 PUMP:Pump Electric Energy
-  SWHSYS1 PUMP:Pump Electric Energy
-  TOWERWATERSYS PUMP:Pump Electric Energy
-
- For Meter=Carbon Equivalent:Facility [kg], ResourceType=Carbon Equivalent, contents are:
-  Site:Environmental Impact Total N2O Emissions Carbon Equivalent Mass
-  Site:Environmental Impact Total CH4 Emissions Carbon Equivalent Mass
-  Site:Environmental Impact Total CO2 Emissions Carbon Equivalent Mass
-
- For Meter=CarbonEquivalentEmissions:Carbon Equivalent [kg], ResourceType=Carbon Equivalent, EndUse=CarbonEquivalentEmissions, contents are:
-  Site:Environmental Impact Total N2O Emissions Carbon Equivalent Mass
-  Site:Environmental Impact Total CH4 Emissions Carbon Equivalent Mass
-  Site:Environmental Impact Total CO2 Emissions Carbon Equivalent Mass

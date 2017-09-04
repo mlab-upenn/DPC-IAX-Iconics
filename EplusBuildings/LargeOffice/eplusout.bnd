@@ -1,4 +1,4 @@
-Program Version,EnergyPlus-Windows-64 8.1.0.009, YMD=2017.09.03 20:22
+Program Version,EnergyPlus-Windows-64 8.1.0.009, YMD=2017.09.04 15:15
 ! This file shows details about the branches, nodes, and other
 ! elements of the flow connections.
 ! This file is intended for use in "debugging" potential problems
@@ -1674,4 +1674,3 @@ Program Version,EnergyPlus-Windows-64 8.1.0.009, YMD=2017.09.03 20:22
  Non-Parent Node Connection,SWHSYS1 SUPPLY INLET NODE,PUMP:VARIABLESPEED,SWHSYS1 PUMP,Inlet,1
  Non-Parent Node Connection,SWHSYS1 PUMP-SWHSYS1 WATER HEATERNODEVIACONNECTOR,PUMP:VARIABLESPEED,SWHSYS1 PUMP,Outlet,1
  Non-Parent Node Connection,TOWERWATERSYS SUPPLY INLET NODE,PUMP:CONSTANTSPEED,TOWERWATERSYS PUMP,Inlet,1
- Non-Parent Node Connection,TOWERWATERSYS PUMP-TOWERWATERSYS COOLTOWERNODEVIACONNECTOR,PUMP:CONSTANTSPEED,TOWERWATERSYS PUMP,Outlet,1

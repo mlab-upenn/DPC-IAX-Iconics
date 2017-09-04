@@ -1,4 +1,4 @@
-Program Version,EnergyPlus-Windows-64 8.1.0.009, YMD=2017.09.03 20:22
+Program Version,EnergyPlus-Windows-64 8.1.0.009, YMD=2017.09.04 15:15
 ! <Version>, Version ID
  Version, 8.1
 ! <Timesteps per Hour>, #TimeSteps, Minutes per TimeStep {minutes}
@@ -11,6 +11,8 @@ Program Version,EnergyPlus-Windows-64 8.1.0.009, YMD=2017.09.03 20:22
  Output Reporting Tolerances, 0.556, 0.556, 
 ! <Site:GroundTemperature:BuildingSurface>, Months From Jan to Dec {C}
  Site:GroundTemperature:BuildingSurface,  19.53,  19.50,  19.54,  19.60,  20.00,  21.64,  22.23,  22.38,  21.45,  20.12,  19.80,  19.63
+! <Site:GroundTemperature:FCfactorMethod>, Months From Jan to Dec {C}
+ Site:GroundTemperature:FCfactorMethod,  -1.89,  -3.06,  -0.99,   2.23,  10.68,  17.20,  21.60,  22.94,  20.66,  15.60,   8.83,   2.56
 ! <Site:GroundTemperature:Shallow>, Months From Jan to Dec {C}
  Site:GroundTemperature:Shallow,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00,  13.00
 ! <Site:GroundTemperature:Deep>, Months From Jan to Dec {C}
@@ -26,7 +28,7 @@ Program Version,EnergyPlus-Windows-64 8.1.0.009, YMD=2017.09.03 20:22
 ! <Environment:Weather Station>,Wind Sensor Height Above Ground {m},Wind Speed Profile Exponent {},Wind Speed Profile Boundary Layer Thickness {m},Air Temperature Sensor Height Above Ground {m},Wind Speed Modifier Coefficient [Internal],Temperature Modifier Coefficient [Internal]
 Environment:Weather Station,10.000,0.140,270.000,1.500,1.586,9.750E-003
 ! <Site:Location>, Location Name, Latitude {N+/S- Deg}, Longitude {E+/W- Deg},  Time Zone Number {GMT+/-}, Elevation {m},  Standard Pressure at Elevation {Pa}, Standard RhoAir at Elevation
-Site:Location,587017 587017 587017 TMY2 WMO#=587017,41.99,-87.50,-6.00,172.00,99276,1.1800
+Site:Location,Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300,41.98,-87.92,-6.00,201.00,98934,1.1759
 ! <Building Information>, Building Name,North Axis {deg},Terrain,  Loads Convergence Tolerance Value,Temperature Convergence Tolerance Value,  Solar Distribution,Maximum Number of Warmup Days,Minimum Number of Warmup Days
  Building Information,Ref Bldg Large Office New2004_v1.3_5.0,0.000,City,4.00000E-002,0.20000,FullInteriorAndExterior,25,6
 ! <Inside Convection Algorithm>, Algorithm {Simple | TARP | CeilingDiffuser | AdaptiveConvectionAlgorithm}
@@ -226,335 +228,289 @@ Zone Volume Capacitance Multiplier,   1.000 ,   1.000,   1.000,   1.000
  Cooling Sizing Factor Information, Zone PERIMETER_TOP_ZN_3,   1.3300    
  Cooling Sizing Factor Information, Zone PERIMETER_TOP_ZN_4,   1.3300    
 ! <Zone Sizing Information>, Zone Name, Load Type, Calc Des Load {W}, User Des Load {W}, Calc Des Air Flow Rate {m3/s}, User Des Air Flow Rate {m3/s}, Design Day Name, Date/Time of Peak, Temperature at Peak {C}, Humidity Ratio at Peak {kgWater/kgDryAir}, Floor Area {m2}, # Occupants, Calc Outdoor Air Flow Rate {m3/s}
- Zone Sizing Information, BASEMENT, Cooling, 45029.13998, 59888.75617, 3.33867, 4.44043, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 19:00:00, 27.02700, 1.87829E-002, 3563.10602, 95.88552, 1.19857
+ Zone Sizing Information, BASEMENT, Cooling, 45029.77117, 59889.59566, 3.35027, 4.45586, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 19:05:00, 26.92892, 1.87829E-002, 3563.10602, 95.88552, 1.19857
  Zone Sizing Information, BASEMENT, Heating, 0.00000, 0.00000, 0.00000, 1.19857, CHICAGO ANN HTG 99.6% CONDNS DB, , -20.60000, 6.12575E-004, 3563.10602, 95.88552, 1.19857
- Zone Sizing Information, CORE_BOTTOM, Cooling, 57050.97120, 75877.79170, 4.23027, 5.62626, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 18:25:00, 27.96325, 1.87829E-002, 2532.32320, 136.29296, 1.70366
+ Zone Sizing Information, CORE_BOTTOM, Cooling, 57051.35543, 75878.30272, 4.24493, 5.64576, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 18:25:00, 27.96325, 1.87829E-002, 2532.32320, 136.29296, 1.70366
  Zone Sizing Information, CORE_BOTTOM, Heating, 0.00000, 0.00000, 0.00000, 1.70366, CHICAGO ANN HTG 99.6% CONDNS DB, , -20.60000, 6.12575E-004, 2532.32320, 136.29296, 1.70366
- Zone Sizing Information, CORE_MID, Cooling, 592624.96426, 788191.20246, 43.94249, 58.44351, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 18:25:00, 27.96325, 1.87829E-002, 2532.32320, 136.29296, 17.03662
+ Zone Sizing Information, CORE_MID, Cooling, 592624.75904, 788190.92953, 44.09446, 58.64563, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 18:25:00, 27.96325, 1.87829E-002, 2532.32320, 136.29296, 17.03662
  Zone Sizing Information, CORE_MID, Heating, 0.00000, 0.00000, 0.00000, 17.03662, CHICAGO ANN HTG 99.6% CONDNS DB, , -20.60000, 6.12575E-004, 2532.32320, 136.29296, 17.03662
- Zone Sizing Information, CORE_TOP, Cooling, 69212.33306, 92052.40298, 5.13201, 6.82557, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 18:35:00, 27.69575, 1.87829E-002, 2532.32320, 136.29296, 1.70366
- Zone Sizing Information, CORE_TOP, Heating, 48010.59395, 63854.08996, 1.37593, 1.82999, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 06:05:00, -20.60000, 6.12575E-004, 2532.32320, 136.29296, 1.70366
- Zone Sizing Information, PERIMETER_BOT_ZN_1, Cooling, 12430.03767, 16531.95011, 0.92172, 1.22588, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 12:45:00, 30.45100, 1.87829E-002, 313.41969, 16.86866, 0.21086
- Zone Sizing Information, PERIMETER_BOT_ZN_1, Heating, 12466.65641, 16580.65302, 0.35721, 0.47509, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -20.60000, 6.12575E-004, 313.41969, 16.86866, 0.21086
- Zone Sizing Information, PERIMETER_BOT_ZN_2, Cooling, 16147.64063, 21476.36203, 1.19736, 1.59249, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 07:55:00, 23.13042, 1.83091E-002, 201.97515, 10.87057, 0.13588
- Zone Sizing Information, PERIMETER_BOT_ZN_2, Heating, 8370.25933, 11132.44491, 0.23984, 0.31898, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -20.60000, 6.12575E-004, 201.97515, 10.87057, 0.13588
- Zone Sizing Information, PERIMETER_BOT_ZN_3, Cooling, 10691.96993, 14220.32000, 0.79284, 1.05447, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 14:45:00, 31.20000, 1.87829E-002, 313.41284, 16.86829, 0.21085
- Zone Sizing Information, PERIMETER_BOT_ZN_3, Heating, 12214.39265, 16245.14222, 0.34998, 0.46548, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -20.60000, 6.12575E-004, 313.41284, 16.86829, 0.21085
- Zone Sizing Information, PERIMETER_BOT_ZN_4, Cooling, 18026.13841, 23974.76408, 1.33666, 1.77776, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 16:45:00, 29.91600, 1.87829E-002, 201.97515, 10.87057, 0.13588
- Zone Sizing Information, PERIMETER_BOT_ZN_4, Heating, 8352.05327, 11108.23085, 0.23931, 0.31829, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -20.60000, 6.12575E-004, 201.97515, 10.87057, 0.13588
- Zone Sizing Information, PERIMETER_MID_ZN_1, Cooling, 135315.12335, 179969.11406, 10.03390, 13.34509, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 13:00:00, 30.66500, 1.87829E-002, 313.41969, 16.86866, 2.10858
- Zone Sizing Information, PERIMETER_MID_ZN_1, Heating, 142777.58418, 189894.18696, 4.09106, 5.44111, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -20.60000, 6.12575E-004, 313.41969, 16.86866, 2.10858
- Zone Sizing Information, PERIMETER_MID_ZN_2, Cooling, 168617.23069, 224260.91682, 12.50318, 16.62923, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 08:35:00, 24.46792, 1.87829E-002, 201.97515, 10.87057, 1.35882
- Zone Sizing Information, PERIMETER_MID_ZN_2, Heating, 94136.70947, 125201.82360, 2.69732, 3.58744, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -20.60000, 6.12575E-004, 201.97515, 10.87057, 1.35882
- Zone Sizing Information, PERIMETER_MID_ZN_3, Cooling, 112332.03908, 149401.61198, 8.32968, 11.07848, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 14:50:00, 31.20000, 1.87829E-002, 313.41284, 16.86829, 2.10854
- Zone Sizing Information, PERIMETER_MID_ZN_3, Heating, 141339.24797, 187981.19980, 4.04985, 5.38630, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -20.60000, 6.12575E-004, 313.41284, 16.86829, 2.10854
- Zone Sizing Information, PERIMETER_MID_ZN_4, Cooling, 192923.46064, 256588.20265, 14.30549, 19.02630, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 16:55:00, 29.77333, 1.87829E-002, 201.97515, 10.87057, 1.35882
- Zone Sizing Information, PERIMETER_MID_ZN_4, Heating, 95986.87842, 127662.54830, 2.75033, 3.65795, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -20.60000, 6.12575E-004, 201.97515, 10.87057, 1.35882
- Zone Sizing Information, PERIMETER_TOP_ZN_1, Cooling, 13788.85641, 18339.17902, 1.02247, 1.35989, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 13:20:00, 30.84333, 1.87829E-002, 313.41969, 16.86866, 0.21086
- Zone Sizing Information, PERIMETER_TOP_ZN_1, Heating, 22770.00966, 30284.11284, 0.65244, 0.86775, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -20.60000, 6.12575E-004, 313.41969, 16.86866, 0.21086
- Zone Sizing Information, PERIMETER_TOP_ZN_2, Cooling, 16345.74147, 21739.83615, 1.21206, 1.61204, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 08:35:00, 24.46792, 1.87829E-002, 201.97515, 10.87057, 0.13588
- Zone Sizing Information, PERIMETER_TOP_ZN_2, Heating, 14824.56885, 19716.67657, 0.42477, 0.56495, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -20.60000, 6.12575E-004, 201.97515, 10.87057, 0.13588
- Zone Sizing Information, PERIMETER_TOP_ZN_3, Cooling, 12036.29625, 16008.27401, 0.89252, 1.18705, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 17:05:00, 29.61283, 1.87829E-002, 313.41284, 16.86829, 0.21085
- Zone Sizing Information, PERIMETER_TOP_ZN_3, Heating, 22682.67914, 30167.96326, 0.64994, 0.86442, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -20.60000, 6.12575E-004, 313.41284, 16.86829, 0.21085
- Zone Sizing Information, PERIMETER_TOP_ZN_4, Cooling, 19934.55028, 26512.95187, 1.47817, 1.96596, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 16:55:00, 29.77333, 1.87829E-002, 201.97515, 10.87057, 0.13588
- Zone Sizing Information, PERIMETER_TOP_ZN_4, Heating, 15079.42767, 20055.63881, 0.43208, 0.57466, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -20.60000, 6.12575E-004, 201.97515, 10.87057, 0.13588
+ Zone Sizing Information, CORE_TOP, Cooling, 69221.18864, 92064.18090, 5.15042, 6.85005, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 18:35:00, 27.69575, 1.87829E-002, 2532.32320, 136.29296, 1.70366
+ Zone Sizing Information, CORE_TOP, Heating, 48010.59395, 63854.08996, 1.38069, 1.83632, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 06:05:00, -20.60000, 6.12575E-004, 2532.32320, 136.29296, 1.70366
+ Zone Sizing Information, PERIMETER_BOT_ZN_1, Cooling, 12432.78399, 16535.60271, 0.92511, 1.23039, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 12:45:00, 30.45100, 1.87829E-002, 313.41969, 16.86866, 0.21086
+ Zone Sizing Information, PERIMETER_BOT_ZN_1, Heating, 12466.65641, 16580.65302, 0.35845, 0.47674, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -20.60000, 6.12575E-004, 313.41969, 16.86866, 0.21086
+ Zone Sizing Information, PERIMETER_BOT_ZN_2, Cooling, 16150.89672, 21480.69264, 1.20175, 1.59832, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 07:55:00, 23.13042, 1.83091E-002, 201.97515, 10.87057, 0.13588
+ Zone Sizing Information, PERIMETER_BOT_ZN_2, Heating, 8370.25933, 11132.44491, 0.24066, 0.32008, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -20.60000, 6.12575E-004, 201.97515, 10.87057, 0.13588
+ Zone Sizing Information, PERIMETER_BOT_ZN_3, Cooling, 10696.83679, 14226.79294, 0.79594, 1.05860, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 14:50:00, 31.20000, 1.87829E-002, 313.41284, 16.86829, 0.21085
+ Zone Sizing Information, PERIMETER_BOT_ZN_3, Heating, 12214.39265, 16245.14222, 0.35119, 0.46709, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -20.60000, 6.12575E-004, 313.41284, 16.86829, 0.21085
+ Zone Sizing Information, PERIMETER_BOT_ZN_4, Cooling, 18027.28433, 23976.28816, 1.34137, 1.78402, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 16:50:00, 29.84467, 1.87829E-002, 201.97515, 10.87057, 0.13588
+ Zone Sizing Information, PERIMETER_BOT_ZN_4, Heating, 8352.05327, 11108.23085, 0.24014, 0.31939, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -20.60000, 6.12575E-004, 201.97515, 10.87057, 0.13588
+ Zone Sizing Information, PERIMETER_MID_ZN_1, Cooling, 135350.76993, 180016.52400, 10.07126, 13.39477, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 13:05:00, 30.70958, 1.87829E-002, 313.41969, 16.86866, 2.10858
+ Zone Sizing Information, PERIMETER_MID_ZN_1, Heating, 142777.58418, 189894.18696, 4.10521, 5.45993, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -20.60000, 6.12575E-004, 313.41969, 16.86866, 2.10858
+ Zone Sizing Information, PERIMETER_MID_ZN_2, Cooling, 168706.63876, 224379.82955, 12.55308, 16.69560, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 08:35:00, 24.46792, 1.87829E-002, 201.97515, 10.87057, 1.35882
+ Zone Sizing Information, PERIMETER_MID_ZN_2, Heating, 94136.70947, 125201.82360, 2.70665, 3.59985, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -20.60000, 6.12575E-004, 201.97515, 10.87057, 1.35882
+ Zone Sizing Information, PERIMETER_MID_ZN_3, Cooling, 112399.61456, 149491.48736, 8.36352, 11.12349, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 14:55:00, 31.20000, 1.87829E-002, 313.41284, 16.86829, 2.10854
+ Zone Sizing Information, PERIMETER_MID_ZN_3, Heating, 141339.24797, 187981.19980, 4.06386, 5.40493, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -20.60000, 6.12575E-004, 313.41284, 16.86829, 2.10854
+ Zone Sizing Information, PERIMETER_MID_ZN_4, Cooling, 192935.86639, 256604.70230, 14.35590, 19.09334, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 16:55:00, 29.77333, 1.87829E-002, 201.97515, 10.87057, 1.35882
+ Zone Sizing Information, PERIMETER_MID_ZN_4, Heating, 95986.87842, 127662.54830, 2.75985, 3.67060, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 24:00:00, -20.60000, 6.12575E-004, 201.97515, 10.87057, 1.35882
+ Zone Sizing Information, PERIMETER_TOP_ZN_1, Cooling, 13794.00583, 18346.02775, 1.02639, 1.36510, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 13:25:00, 30.88792, 1.87829E-002, 313.41969, 16.86866, 0.21086
+ Zone Sizing Information, PERIMETER_TOP_ZN_1, Heating, 22770.00966, 30284.11284, 0.65470, 0.87075, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -20.60000, 6.12575E-004, 313.41969, 16.86866, 0.21086
+ Zone Sizing Information, PERIMETER_TOP_ZN_2, Cooling, 16354.70197, 21751.75362, 1.21692, 1.61850, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 08:40:00, 24.63733, 1.87829E-002, 201.97515, 10.87057, 0.13588
+ Zone Sizing Information, PERIMETER_TOP_ZN_2, Heating, 14824.56885, 19716.67657, 0.42624, 0.56690, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -20.60000, 6.12575E-004, 201.97515, 10.87057, 0.13588
+ Zone Sizing Information, PERIMETER_TOP_ZN_3, Cooling, 12034.87400, 16006.38242, 0.89550, 1.19101, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 17:10:00, 29.52367, 1.87829E-002, 313.41284, 16.86829, 0.21085
+ Zone Sizing Information, PERIMETER_TOP_ZN_3, Heating, 22682.67914, 30167.96326, 0.65219, 0.86741, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -20.60000, 6.12575E-004, 313.41284, 16.86829, 0.21085
+ Zone Sizing Information, PERIMETER_TOP_ZN_4, Cooling, 19934.15671, 26512.42843, 1.48325, 1.97272, CHICAGO ANN CLG .4% CONDNS WB=>MDB, 7/21 16:55:00, 29.77333, 1.87829E-002, 201.97515, 10.87057, 0.13588
+ Zone Sizing Information, PERIMETER_TOP_ZN_4, Heating, 15079.42767, 20055.63881, 0.43357, 0.57665, CHICAGO ANN HTG 99.6% CONDNS DB, 1/21 06:00:00, -20.60000, 6.12575E-004, 201.97515, 10.87057, 0.13588
 ! <System Sizing Information>, System Name, Field Description, Value
- System Sizing Information, VAV_1, Calculated Cooling Design Air Flow Rate [m3/s], 11.27686
- System Sizing Information, VAV_1, User Cooling Design Air Flow Rate [m3/s], 11.27686
- System Sizing Information, VAV_1, Calculated Heating Design Air Flow Rate [m3/s], 3.28150
- System Sizing Information, VAV_1, User Heating Design Air Flow Rate [m3/s], 3.28150
- System Sizing Information, VAV_2, Calculated Cooling Design Air Flow Rate [m3/s], 118.52261
- System Sizing Information, VAV_2, User Cooling Design Air Flow Rate [m3/s], 118.52261
- System Sizing Information, VAV_2, Calculated Heating Design Air Flow Rate [m3/s], 35.10942
- System Sizing Information, VAV_2, User Heating Design Air Flow Rate [m3/s], 35.10942
- System Sizing Information, VAV_3, Calculated Cooling Design Air Flow Rate [m3/s], 12.95051
- System Sizing Information, VAV_3, User Cooling Design Air Flow Rate [m3/s], 12.95051
- System Sizing Information, VAV_3, Calculated Heating Design Air Flow Rate [m3/s], 4.70177
- System Sizing Information, VAV_3, User Heating Design Air Flow Rate [m3/s], 4.70177
- System Sizing Information, VAV_5, Calculated Cooling Design Air Flow Rate [m3/s], 4.44043
- System Sizing Information, VAV_5, User Cooling Design Air Flow Rate [m3/s], 4.44043
+ System Sizing Information, VAV_1, Calculated Cooling Design Air Flow Rate [m3/s], 11.31709
+ System Sizing Information, VAV_1, User Cooling Design Air Flow Rate [m3/s], 11.31709
+ System Sizing Information, VAV_1, Calculated Heating Design Air Flow Rate [m3/s], 3.28696
+ System Sizing Information, VAV_1, User Heating Design Air Flow Rate [m3/s], 3.28696
+ System Sizing Information, VAV_2, Calculated Cooling Design Air Flow Rate [m3/s], 118.95283
+ System Sizing Information, VAV_2, User Cooling Design Air Flow Rate [m3/s], 118.95283
+ System Sizing Information, VAV_2, Calculated Heating Design Air Flow Rate [m3/s], 35.17192
+ System Sizing Information, VAV_2, User Heating Design Air Flow Rate [m3/s], 35.17192
+ System Sizing Information, VAV_3, Calculated Cooling Design Air Flow Rate [m3/s], 12.99740
+ System Sizing Information, VAV_3, User Cooling Design Air Flow Rate [m3/s], 12.99740
+ System Sizing Information, VAV_3, Calculated Heating Design Air Flow Rate [m3/s], 4.71803
+ System Sizing Information, VAV_3, User Heating Design Air Flow Rate [m3/s], 4.71803
+ System Sizing Information, VAV_5, Calculated Cooling Design Air Flow Rate [m3/s], 4.45586
+ System Sizing Information, VAV_5, User Cooling Design Air Flow Rate [m3/s], 4.45586
  System Sizing Information, VAV_5, Calculated Heating Design Air Flow Rate [m3/s], 1.19857
  System Sizing Information, VAV_5, User Heating Design Air Flow Rate [m3/s], 1.19857
 ! <Component Sizing Information>, Component Type, Component Name, Input Field Description, Value
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, BASEMENT VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 4.44043
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, BASEMENT VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 1.24623E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, BASEMENT VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 4.45586
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, BASEMENT VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 1.25055E-003
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, BASEMENT VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 1.00000
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, BASEMENT VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 0.00000
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, BASEMENT VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 1.33213
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, BASEMENT VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 1.33676
  Component Sizing Information, Coil:Heating:Water, BASEMENT VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 0.00000
  Component Sizing Information, Coil:Heating:Water, BASEMENT VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 0.00000
  Component Sizing Information, Coil:Heating:Water, BASEMENT VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 1.00000
 ! <Water Heating Coil Capacity Information>,Component Type,Name,Nominal Total Capacity {W}
 Water Heating Coil Capacity Information,Coil:Heating:Water,BASEMENT VAV BOX REHEAT COIL,0.00
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_BOTTOM VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 5.62626
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_BOTTOM VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 5.64576
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_BOTTOM VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_BOTTOM VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.91458
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_BOTTOM VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.91142
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_BOTTOM VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 0.00000
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_BOTTOM VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 1.68788
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_BOTTOM VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 1.69373
  Component Sizing Information, Coil:Heating:Water, CORE_BOTTOM VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 0.00000
  Component Sizing Information, Coil:Heating:Water, CORE_BOTTOM VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 0.00000
  Component Sizing Information, Coil:Heating:Water, CORE_BOTTOM VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 1.00000
 Water Heating Coil Capacity Information,Coil:Heating:Water,CORE_BOTTOM VAV BOX REHEAT COIL,0.00
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_MID VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 58.44351
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_MID VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 58.64563
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_MID VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_MID VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.88045
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_MID VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.87742
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_MID VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 0.00000
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_MID VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 17.53305
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_MID VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 17.59369
  Component Sizing Information, Coil:Heating:Water, CORE_MID VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 0.00000
  Component Sizing Information, Coil:Heating:Water, CORE_MID VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 0.00000
  Component Sizing Information, Coil:Heating:Water, CORE_MID VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 1.00000
 Water Heating Coil Capacity Information,Coil:Heating:Water,CORE_MID VAV BOX REHEAT COIL,0.00
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_TOP VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 6.82557
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_TOP VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 6.85005
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_TOP VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_TOP VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.75388
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_TOP VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 1.63003E-003
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_TOP VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 2.04767
- Component Sizing Information, Coil:Heating:Water, CORE_TOP VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 75712.72137
- Component Sizing Information, Coil:Heating:Water, CORE_TOP VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 1.63003E-003
- Component Sizing Information, Coil:Heating:Water, CORE_TOP VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 1789.39920
-Water Heating Coil Capacity Information,Coil:Heating:Water,CORE_TOP VAV BOX REHEAT COIL,75758.81
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_1 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.22588
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_TOP VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.75119
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_TOP VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 1.63006E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, CORE_TOP VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 2.05502
+ Component Sizing Information, Coil:Heating:Water, CORE_TOP VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 75714.10030
+ Component Sizing Information, Coil:Heating:Water, CORE_TOP VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 1.63006E-003
+ Component Sizing Information, Coil:Heating:Water, CORE_TOP VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 1789.35129
+Water Heating Coil Capacity Information,Coil:Heating:Water,CORE_TOP VAV BOX REHEAT COIL,75760.96
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_1 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.23039
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_1 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_1 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.51952
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_1 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.51761
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_1 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 4.16658E-004
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_1 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.47509
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_1 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.47674
  Component Sizing Information, Coil:Heating:Water, PERIMETER_BOT_ZN_1 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 19353.23384
  Component Sizing Information, Coil:Heating:Water, PERIMETER_BOT_ZN_1 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 4.16658E-004
  Component Sizing Information, Coil:Heating:Water, PERIMETER_BOT_ZN_1 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 477.74435
-Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_BOT_ZN_1 VAV BOX REHEAT COIL,17741.68
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_2 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.59249
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_2 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.36538E-003
+Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_BOT_ZN_1 VAV BOX REHEAT COIL,17743.44
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_2 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.59832
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_2 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.37404E-003
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_2 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.30000
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_2 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 2.97669E-004
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_2 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.47775
- Component Sizing Information, Coil:Heating:Water, PERIMETER_BOT_ZN_2 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 13826.36199
- Component Sizing Information, Coil:Heating:Water, PERIMETER_BOT_ZN_2 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 2.97669E-004
- Component Sizing Information, Coil:Heating:Water, PERIMETER_BOT_ZN_2 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 301.29802
-Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_BOT_ZN_2 VAV BOX REHEAT COIL,13838.39
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_3 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.05447
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_2 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 2.97680E-004
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_2 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.47950
+ Component Sizing Information, Coil:Heating:Water, PERIMETER_BOT_ZN_2 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 13826.86752
+ Component Sizing Information, Coil:Heating:Water, PERIMETER_BOT_ZN_2 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 2.97680E-004
+ Component Sizing Information, Coil:Heating:Water, PERIMETER_BOT_ZN_2 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 301.29574
+Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_BOT_ZN_2 VAV BOX REHEAT COIL,13839.00
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_3 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.05860
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_3 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_3 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.60396
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_3 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.60160
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_3 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 4.08225E-004
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_3 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.46548
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_3 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.46709
  Component Sizing Information, Coil:Heating:Water, PERIMETER_BOT_ZN_3 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 18961.53038
  Component Sizing Information, Coil:Heating:Water, PERIMETER_BOT_ZN_3 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 4.08225E-004
  Component Sizing Information, Coil:Heating:Water, PERIMETER_BOT_ZN_3 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 468.07381
-Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_BOT_ZN_3 VAV BOX REHEAT COIL,16484.24
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_4 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.77776
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_4 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.64056E-003
+Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_BOT_ZN_3 VAV BOX REHEAT COIL,16487.75
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_4 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.78402
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_4 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.64986E-003
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_4 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.30000
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_4 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 3.03413E-004
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_4 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.53333
- Component Sizing Information, Coil:Heating:Water, PERIMETER_BOT_ZN_4 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 14093.13776
- Component Sizing Information, Coil:Heating:Water, PERIMETER_BOT_ZN_4 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 3.03413E-004
- Component Sizing Information, Coil:Heating:Water, PERIMETER_BOT_ZN_4 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 300.28699
-Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_BOT_ZN_4 VAV BOX REHEAT COIL,14106.97
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_1 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 13.34509
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_4 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 3.03416E-004
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_BOT_ZN_4 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.53521
+ Component Sizing Information, Coil:Heating:Water, PERIMETER_BOT_ZN_4 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 14093.31457
+ Component Sizing Information, Coil:Heating:Water, PERIMETER_BOT_ZN_4 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 3.03416E-004
+ Component Sizing Information, Coil:Heating:Water, PERIMETER_BOT_ZN_4 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 300.28725
+Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_BOT_ZN_4 VAV BOX REHEAT COIL,14107.24
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_1 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 13.39477
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_1 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_1 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.47723
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_1 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.47546
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_1 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 4.77203E-003
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_1 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 5.44111
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_1 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 5.45993
  Component Sizing Information, Coil:Heating:Water, PERIMETER_MID_ZN_1 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 221654.69924
  Component Sizing Information, Coil:Heating:Water, PERIMETER_MID_ZN_1 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 4.77203E-003
  Component Sizing Information, Coil:Heating:Water, PERIMETER_MID_ZN_1 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 5471.74139
-Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_MID_ZN_1 VAV BOX REHEAT COIL,199182.50
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_2 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 16.62923
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_2 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.46999E-003
+Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_MID_ZN_1 VAV BOX REHEAT COIL,199206.64
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_2 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 16.69560
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_2 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.47985E-003
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_2 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.30000
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_2 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 3.30450E-003
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_2 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 4.98877
- Component Sizing Information, Coil:Heating:Water, PERIMETER_MID_ZN_2 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 153489.97194
- Component Sizing Information, Coil:Heating:Water, PERIMETER_MID_ZN_2 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 3.30450E-003
- Component Sizing Information, Coil:Heating:Water, PERIMETER_MID_ZN_2 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 3402.87378
-Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_MID_ZN_2 VAV BOX REHEAT COIL,153619.15
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_3 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 11.07848
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_2 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 3.30480E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_2 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 5.00868
+ Component Sizing Information, Coil:Heating:Water, PERIMETER_MID_ZN_2 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 153503.84591
+ Component Sizing Information, Coil:Heating:Water, PERIMETER_MID_ZN_2 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 3.30480E-003
+ Component Sizing Information, Coil:Heating:Water, PERIMETER_MID_ZN_2 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 3402.73810
+Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_MID_ZN_2 VAV BOX REHEAT COIL,153634.27
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_3 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 11.12349
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_3 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_3 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.57486
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_3 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.57253
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_3 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 4.72394E-003
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_3 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 5.38630
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_3 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 5.40493
  Component Sizing Information, Coil:Heating:Water, PERIMETER_MID_ZN_3 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 219421.29614
  Component Sizing Information, Coil:Heating:Water, PERIMETER_MID_ZN_3 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 4.72394E-003
  Component Sizing Information, Coil:Heating:Water, PERIMETER_MID_ZN_3 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 5416.60195
-Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_MID_ZN_3 VAV BOX REHEAT COIL,182638.11
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_4 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 19.02630
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_4 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.82604E-003
+Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_MID_ZN_3 VAV BOX REHEAT COIL,182692.87
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_4 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 19.09334
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_4 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.83599E-003
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_4 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.30000
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_4 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 3.43959E-003
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_4 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 5.70789
- Component Sizing Information, Coil:Heating:Water, PERIMETER_MID_ZN_4 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 159764.62136
- Component Sizing Information, Coil:Heating:Water, PERIMETER_MID_ZN_4 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 3.43959E-003
- Component Sizing Information, Coil:Heating:Water, PERIMETER_MID_ZN_4 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 3451.44684
-Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_MID_ZN_4 VAV BOX REHEAT COIL,159906.77
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_1 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.35989
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_4 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 3.43963E-003
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_MID_ZN_4 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 5.72800
+ Component Sizing Information, Coil:Heating:Water, PERIMETER_MID_ZN_4 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 159766.55163
+ Component Sizing Information, Coil:Heating:Water, PERIMETER_MID_ZN_4 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 3.43963E-003
+ Component Sizing Information, Coil:Heating:Water, PERIMETER_MID_ZN_4 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 3451.44285
+Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_MID_ZN_4 VAV BOX REHEAT COIL,159909.81
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_1 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.36510
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_1 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_1 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.46832
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_1 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.46654
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_1 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 7.61106E-004
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_1 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.86775
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_1 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.87075
  Component Sizing Information, Coil:Heating:Water, PERIMETER_TOP_ZN_1 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 35352.44190
  Component Sizing Information, Coil:Heating:Water, PERIMETER_TOP_ZN_1 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 7.61106E-004
  Component Sizing Information, Coil:Heating:Water, PERIMETER_TOP_ZN_1 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 872.74308
-Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_TOP_ZN_1 VAV BOX REHEAT COIL,25515.65
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_2 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.61204
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_2 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.39441E-003
+Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_TOP_ZN_1 VAV BOX REHEAT COIL,25521.75
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_2 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.61850
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_2 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.40401E-003
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_2 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.30000
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_2 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 4.95519E-004
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_2 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.56495
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_2 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.56690
  Component Sizing Information, Coil:Heating:Water, PERIMETER_TOP_ZN_2 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 23016.24424
  Component Sizing Information, Coil:Heating:Water, PERIMETER_TOP_ZN_2 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 4.95519E-004
  Component Sizing Information, Coil:Heating:Water, PERIMETER_TOP_ZN_2 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 568.19927
-Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_TOP_ZN_2 VAV BOX REHEAT COIL,21892.84
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_3 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.18705
+Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_TOP_ZN_2 VAV BOX REHEAT COIL,21897.34
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_3 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.19101
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_3 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.03200E-003
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_3 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.53650
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_3 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.53472
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_3 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 7.58187E-004
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_3 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.86442
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_3 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.86741
  Component Sizing Information, Coil:Heating:Water, PERIMETER_TOP_ZN_3 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 35216.82565
  Component Sizing Information, Coil:Heating:Water, PERIMETER_TOP_ZN_3 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 7.58187E-004
  Component Sizing Information, Coil:Heating:Water, PERIMETER_TOP_ZN_3 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 869.39488
-Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_TOP_ZN_3 VAV BOX REHEAT COIL,23450.37
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_4 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.96596
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_4 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.92011E-003
+Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_TOP_ZN_3 VAV BOX REHEAT COIL,23449.17
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_4 VAV BOX COMPONENT, Design Size Maximum Air Flow Rate [m3/s], 1.97272
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_4 VAV BOX COMPONENT, Design Size Maximum Flow per Zone Floor Area during Reheat [m3/s-m2], 2.93015E-003
  Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_4 VAV BOX COMPONENT, Design Size Maximum Flow Fraction during Reheat [], 0.30000
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_4 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 5.05748E-004
- Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_4 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.58979
- Component Sizing Information, Coil:Heating:Water, PERIMETER_TOP_ZN_4 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 23491.37845
- Component Sizing Information, Coil:Heating:Water, PERIMETER_TOP_ZN_4 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 5.05748E-004
- Component Sizing Information, Coil:Heating:Water, PERIMETER_TOP_ZN_4 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 573.62655
-Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_TOP_ZN_4 VAV BOX REHEAT COIL,23503.17
- Component Sizing Information, Branch, VAV_1 AIR LOOP MAIN BRANCH, Maximum Flow Rate [m3/s], 11.27686
- Component Sizing Information, AirLoopHVAC, VAV_1, Design Supply Air Flow Rate [m3/s], 11.27686
- Component Sizing Information, Branch, VAV_2 AIR LOOP MAIN BRANCH, Maximum Flow Rate [m3/s], 118.52261
- Component Sizing Information, AirLoopHVAC, VAV_2, Design Supply Air Flow Rate [m3/s], 118.52261
- Component Sizing Information, Branch, VAV_3 AIR LOOP MAIN BRANCH, Maximum Flow Rate [m3/s], 12.95051
- Component Sizing Information, AirLoopHVAC, VAV_3, Design Supply Air Flow Rate [m3/s], 12.95051
- Component Sizing Information, Branch, VAV_5 AIR LOOP MAIN BRANCH, Maximum Flow Rate [m3/s], 4.44043
- Component Sizing Information, AirLoopHVAC, VAV_5, Design Supply Air Flow Rate [m3/s], 4.44043
- Component Sizing Information, Controller:OutdoorAir, VAV_1_OA_CONTROLLER, Maximum Outdoor Air Flow Rate [m3/s], 11.27686
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_4 VAV BOX COMPONENT, Design Size Maximum Reheat Water Flow Rate [m3/s], 5.05747E-004
+ Component Sizing Information, AirTerminal:SingleDuct:VAV:Reheat, PERIMETER_TOP_ZN_4 VAV BOX COMPONENT, Design Size Reheat Coil Sizing Air Volume Flow Rate [m3/s], 0.59182
+ Component Sizing Information, Coil:Heating:Water, PERIMETER_TOP_ZN_4 VAV BOX REHEAT COIL, Design Size Design Coil Load [W], 23491.31788
+ Component Sizing Information, Coil:Heating:Water, PERIMETER_TOP_ZN_4 VAV BOX REHEAT COIL, Design Size Maximum Water Flow Rate [m3/s], 5.05747E-004
+ Component Sizing Information, Coil:Heating:Water, PERIMETER_TOP_ZN_4 VAV BOX REHEAT COIL, Design Size U-Factor Times Area Value [W/K], 573.62968
+Water Heating Coil Capacity Information,Coil:Heating:Water,PERIMETER_TOP_ZN_4 VAV BOX REHEAT COIL,23503.37
+ Component Sizing Information, Branch, VAV_1 AIR LOOP MAIN BRANCH, Maximum Flow Rate [m3/s], 11.31709
+ Component Sizing Information, AirLoopHVAC, VAV_1, Design Supply Air Flow Rate [m3/s], 11.31709
+ Component Sizing Information, Branch, VAV_2 AIR LOOP MAIN BRANCH, Maximum Flow Rate [m3/s], 118.95283
+ Component Sizing Information, AirLoopHVAC, VAV_2, Design Supply Air Flow Rate [m3/s], 118.95283
+ Component Sizing Information, Branch, VAV_3 AIR LOOP MAIN BRANCH, Maximum Flow Rate [m3/s], 12.99740
+ Component Sizing Information, AirLoopHVAC, VAV_3, Design Supply Air Flow Rate [m3/s], 12.99740
+ Component Sizing Information, Branch, VAV_5 AIR LOOP MAIN BRANCH, Maximum Flow Rate [m3/s], 4.45586
+ Component Sizing Information, AirLoopHVAC, VAV_5, Design Supply Air Flow Rate [m3/s], 4.45586
+ Component Sizing Information, Controller:OutdoorAir, VAV_1_OA_CONTROLLER, Maximum Outdoor Air Flow Rate [m3/s], 11.31709
  Component Sizing Information, Controller:OutdoorAir, VAV_1_OA_CONTROLLER, Minimum Outdoor Air Flow Rate [m3/s], 2.39714
- Component Sizing Information, Coil:Cooling:Water, VAV_1_COOLC, Design Size Design Coil Load [W], 249313.63445
- Component Sizing Information, Coil:Cooling:Water, VAV_1_COOLC, Design Size Design Water Flow Rate [m3/s], 8.90476E-003
- Component Sizing Information, Coil:Cooling:Water, VAV_1_COOLC, Design Size Design Air Flow Rate [m3/s], 11.27686
- Component Sizing Information, Coil:Cooling:Water, VAV_1_COOLC, Design Size Design Inlet Air Temperature [C], 24.88328
+ Component Sizing Information, Coil:Cooling:Water, VAV_1_COOLC, Design Size Design Coil Load [W], 249015.81237
+ Component Sizing Information, Coil:Cooling:Water, VAV_1_COOLC, Design Size Design Water Flow Rate [m3/s], 8.89412E-003
+ Component Sizing Information, Coil:Cooling:Water, VAV_1_COOLC, Design Size Design Air Flow Rate [m3/s], 11.31709
+ Component Sizing Information, Coil:Cooling:Water, VAV_1_COOLC, Design Size Design Inlet Air Temperature [C], 24.87776
  Component Sizing Information, Coil:Cooling:Water, VAV_1_COOLC, Design Size Design Inlet Water Temperature [C], 6.67000
  Component Sizing Information, Coil:Cooling:Water, VAV_1_COOLC, Design Size Design Outlet Air Temperature [C], 12.80000
- Component Sizing Information, Coil:Cooling:Water, VAV_1_COOLC, Design Size Design Inlet Air Humidity Ratio, 1.10141E-002
+ Component Sizing Information, Coil:Cooling:Water, VAV_1_COOLC, Design Size Design Inlet Air Humidity Ratio, 1.10068E-002
  Component Sizing Information, Coil:Cooling:Water, VAV_1_COOLC, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
 ! <Water Cooling Coil Capacity Information>,Component Type,Name,Nominal Total Capacity {W},Nominal Sensible Capacity {W},Nominal Latent Capacity {W},Nominal Sensible Heat Ratio, Nominal Coil UA Value {W/C}, Nominal Coil Surface Area {m2}
-Water Cooling Coil Capacity Information,Coil:Cooling:Water,VAV_1_COOLC,272413.74,190178.10,82235.64,0.70,30152.03,305.82
- Component Sizing Information, Coil:Heating:Water, VAV_1_HEATC, Design Size Design Coil Load [W], 100992.46413
- Component Sizing Information, Coil:Heating:Water, VAV_1_HEATC, Design Size Maximum Water Flow Rate [m3/s], 2.17428E-003
- Component Sizing Information, Coil:Heating:Water, VAV_1_HEATC, Design Size U-Factor Times Area Value [W/K], 1436.48422
-Water Heating Coil Capacity Information,Coil:Heating:Water,VAV_1_HEATC,73126.76
- Component Sizing Information, Fan:VariableVolume, VAV_1_FAN, Design Size Maximum Flow Rate [m3/s], 11.27686
- Component Sizing Information, Controller:WaterCoil, VAV_1_COOLC_CONTROLLER, Maximum Actuated Flow [m3/s], 8.90476E-003
- Component Sizing Information, Controller:WaterCoil, VAV_1_COOLC_CONTROLLER, Controller Convergence Tolerance, 5.34760E-005
- Component Sizing Information, Controller:WaterCoil, VAV_1_HEATC_CONTROLLER, Maximum Actuated Flow [m3/s], 2.17428E-003
- Component Sizing Information, Controller:OutdoorAir, VAV_2_OA_CONTROLLER, Maximum Outdoor Air Flow Rate [m3/s], 118.52261
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,VAV_1_COOLC,273156.97,189833.62,83323.35,0.69,30139.09,305.69
+ Component Sizing Information, Coil:Heating:Water, VAV_1_HEATC, Design Size Design Coil Load [W], 100583.08149
+ Component Sizing Information, Coil:Heating:Water, VAV_1_HEATC, Design Size Maximum Water Flow Rate [m3/s], 2.16546E-003
+ Component Sizing Information, Coil:Heating:Water, VAV_1_HEATC, Design Size U-Factor Times Area Value [W/K], 1431.73503
+Water Heating Coil Capacity Information,Coil:Heating:Water,VAV_1_HEATC,72914.34
+ Component Sizing Information, Fan:VariableVolume, VAV_1_FAN, Design Size Maximum Flow Rate [m3/s], 11.31709
+ Component Sizing Information, Controller:WaterCoil, VAV_1_COOLC_CONTROLLER, Maximum Actuated Flow [m3/s], 8.89412E-003
+ Component Sizing Information, Controller:WaterCoil, VAV_1_COOLC_CONTROLLER, Controller Convergence Tolerance, 5.35399E-005
+ Component Sizing Information, Controller:WaterCoil, VAV_1_HEATC_CONTROLLER, Maximum Actuated Flow [m3/s], 2.16546E-003
+ Component Sizing Information, Controller:OutdoorAir, VAV_2_OA_CONTROLLER, Maximum Outdoor Air Flow Rate [m3/s], 118.95283
  Component Sizing Information, Controller:OutdoorAir, VAV_2_OA_CONTROLLER, Minimum Outdoor Air Flow Rate [m3/s], 23.97138
- Component Sizing Information, Coil:Cooling:Water, VAV_2_COOLC, Design Size Design Coil Load [W], 2583366.23953
- Component Sizing Information, Coil:Cooling:Water, VAV_2_COOLC, Design Size Design Water Flow Rate [m3/s], 9.22703E-002
- Component Sizing Information, Coil:Cooling:Water, VAV_2_COOLC, Design Size Design Air Flow Rate [m3/s], 118.52261
- Component Sizing Information, Coil:Cooling:Water, VAV_2_COOLC, Design Size Design Inlet Air Temperature [C], 24.88247
+ Component Sizing Information, Coil:Cooling:Water, VAV_2_COOLC, Design Size Design Coil Load [W], 2580896.27577
+ Component Sizing Information, Coil:Cooling:Water, VAV_2_COOLC, Design Size Design Water Flow Rate [m3/s], 9.21821E-002
+ Component Sizing Information, Coil:Cooling:Water, VAV_2_COOLC, Design Size Design Air Flow Rate [m3/s], 118.95283
+ Component Sizing Information, Coil:Cooling:Water, VAV_2_COOLC, Design Size Design Inlet Air Temperature [C], 24.88027
  Component Sizing Information, Coil:Cooling:Water, VAV_2_COOLC, Design Size Design Inlet Water Temperature [C], 6.67000
  Component Sizing Information, Coil:Cooling:Water, VAV_2_COOLC, Design Size Design Outlet Air Temperature [C], 12.80000
- Component Sizing Information, Coil:Cooling:Water, VAV_2_COOLC, Design Size Design Inlet Air Humidity Ratio, 1.09107E-002
+ Component Sizing Information, Coil:Cooling:Water, VAV_2_COOLC, Design Size Design Inlet Air Humidity Ratio, 1.09034E-002
  Component Sizing Information, Coil:Cooling:Water, VAV_2_COOLC, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
-Water Cooling Coil Capacity Information,Coil:Cooling:Water,VAV_2_COOLC,2843322.13,1989782.34,853539.79,0.70,314760.65,3192.48
- Component Sizing Information, Coil:Heating:Water, VAV_2_HEATC, Design Size Design Coil Load [W], 1001131.94282
- Component Sizing Information, Coil:Heating:Water, VAV_2_HEATC, Design Size Maximum Water Flow Rate [m3/s], 2.15535E-002
- Component Sizing Information, Coil:Heating:Water, VAV_2_HEATC, Design Size U-Factor Times Area Value [W/K], 14388.06275
-Water Heating Coil Capacity Information,Coil:Heating:Water,VAV_2_HEATC,736438.59
- Component Sizing Information, Fan:VariableVolume, VAV_2_FAN, Design Size Maximum Flow Rate [m3/s], 118.52261
- Component Sizing Information, Controller:WaterCoil, VAV_2_COOLC_CONTROLLER, Maximum Actuated Flow [m3/s], 9.22703E-002
- Component Sizing Information, Controller:WaterCoil, VAV_2_COOLC_CONTROLLER, Controller Convergence Tolerance, 5.16082E-006
- Component Sizing Information, Controller:WaterCoil, VAV_2_HEATC_CONTROLLER, Maximum Actuated Flow [m3/s], 2.15535E-002
- Component Sizing Information, Controller:OutdoorAir, VAV_3_OA_CONTROLLER, Maximum Outdoor Air Flow Rate [m3/s], 12.95051
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,VAV_2_COOLC,2851425.01,1986350.01,865075.00,0.70,314657.18,3191.43
+ Component Sizing Information, Coil:Heating:Water, VAV_2_HEATC, Design Size Design Coil Load [W], 997025.95559
+ Component Sizing Information, Coil:Heating:Water, VAV_2_HEATC, Design Size Maximum Water Flow Rate [m3/s], 2.14651E-002
+ Component Sizing Information, Coil:Heating:Water, VAV_2_HEATC, Design Size U-Factor Times Area Value [W/K], 14339.72415
+Water Heating Coil Capacity Information,Coil:Heating:Water,VAV_2_HEATC,734250.57
+ Component Sizing Information, Fan:VariableVolume, VAV_2_FAN, Design Size Maximum Flow Rate [m3/s], 118.95283
+ Component Sizing Information, Controller:WaterCoil, VAV_2_COOLC_CONTROLLER, Maximum Actuated Flow [m3/s], 9.21821E-002
+ Component Sizing Information, Controller:WaterCoil, VAV_2_COOLC_CONTROLLER, Controller Convergence Tolerance, 5.16576E-006
+ Component Sizing Information, Controller:WaterCoil, VAV_2_HEATC_CONTROLLER, Maximum Actuated Flow [m3/s], 2.14651E-002
+ Component Sizing Information, Controller:OutdoorAir, VAV_3_OA_CONTROLLER, Maximum Outdoor Air Flow Rate [m3/s], 12.99740
  Component Sizing Information, Controller:OutdoorAir, VAV_3_OA_CONTROLLER, Minimum Outdoor Air Flow Rate [m3/s], 2.39714
- Component Sizing Information, Coil:Cooling:Water, VAV_3_COOLC, Design Size Design Coil Load [W], 272666.25599
- Component Sizing Information, Coil:Cooling:Water, VAV_3_COOLC, Design Size Design Water Flow Rate [m3/s], 9.73884E-003
- Component Sizing Information, Coil:Cooling:Water, VAV_3_COOLC, Design Size Design Air Flow Rate [m3/s], 12.95051
- Component Sizing Information, Coil:Cooling:Water, VAV_3_COOLC, Design Size Design Inlet Air Temperature [C], 24.76039
+ Component Sizing Information, Coil:Cooling:Water, VAV_3_COOLC, Design Size Design Coil Load [W], 272458.56753
+ Component Sizing Information, Coil:Cooling:Water, VAV_3_COOLC, Design Size Design Water Flow Rate [m3/s], 9.73143E-003
+ Component Sizing Information, Coil:Cooling:Water, VAV_3_COOLC, Design Size Design Air Flow Rate [m3/s], 12.99740
+ Component Sizing Information, Coil:Cooling:Water, VAV_3_COOLC, Design Size Design Inlet Air Temperature [C], 24.76085
  Component Sizing Information, Coil:Cooling:Water, VAV_3_COOLC, Design Size Design Inlet Water Temperature [C], 6.67000
  Component Sizing Information, Coil:Cooling:Water, VAV_3_COOLC, Design Size Design Outlet Air Temperature [C], 12.80000
- Component Sizing Information, Coil:Cooling:Water, VAV_3_COOLC, Design Size Design Inlet Air Humidity Ratio, 1.07129E-002
+ Component Sizing Information, Coil:Cooling:Water, VAV_3_COOLC, Design Size Design Inlet Air Humidity Ratio, 1.07063E-002
  Component Sizing Information, Coil:Cooling:Water, VAV_3_COOLC, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
-Water Cooling Coil Capacity Information,Coil:Cooling:Water,VAV_3_COOLC,305587.01,215113.51,90473.50,0.70,33889.32,343.72
- Component Sizing Information, Coil:Heating:Water, VAV_3_HEATC, Design Size Design Coil Load [W], 98435.34451
- Component Sizing Information, Coil:Heating:Water, VAV_3_HEATC, Design Size Maximum Water Flow Rate [m3/s], 2.11922E-003
- Component Sizing Information, Coil:Heating:Water, VAV_3_HEATC, Design Size U-Factor Times Area Value [W/K], 1440.11698
-Water Heating Coil Capacity Information,Coil:Heating:Water,VAV_3_HEATC,74378.48
- Component Sizing Information, Fan:VariableVolume, VAV_3_FAN, Design Size Maximum Flow Rate [m3/s], 12.95051
- Component Sizing Information, Controller:WaterCoil, VAV_3_COOLC_CONTROLLER, Maximum Actuated Flow [m3/s], 9.73884E-003
- Component Sizing Information, Controller:WaterCoil, VAV_3_COOLC_CONTROLLER, Controller Convergence Tolerance, 4.88960E-005
- Component Sizing Information, Controller:WaterCoil, VAV_3_HEATC_CONTROLLER, Maximum Actuated Flow [m3/s], 2.11922E-003
- Component Sizing Information, Controller:OutdoorAir, VAV_5_OA_CONTROLLER, Maximum Outdoor Air Flow Rate [m3/s], 4.44043
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,VAV_3_COOLC,306474.61,214742.77,91731.84,0.70,33879.96,343.63
+ Component Sizing Information, Coil:Heating:Water, VAV_3_HEATC, Design Size Design Coil Load [W], 98024.64249
+ Component Sizing Information, Coil:Heating:Water, VAV_3_HEATC, Design Size Maximum Water Flow Rate [m3/s], 2.11038E-003
+ Component Sizing Information, Coil:Heating:Water, VAV_3_HEATC, Design Size U-Factor Times Area Value [W/K], 1435.12743
+Water Heating Coil Capacity Information,Coil:Heating:Water,VAV_3_HEATC,74147.04
+ Component Sizing Information, Fan:VariableVolume, VAV_3_FAN, Design Size Maximum Flow Rate [m3/s], 12.99740
+ Component Sizing Information, Controller:WaterCoil, VAV_3_COOLC_CONTROLLER, Maximum Actuated Flow [m3/s], 9.73143E-003
+ Component Sizing Information, Controller:WaterCoil, VAV_3_COOLC_CONTROLLER, Controller Convergence Tolerance, 4.89333E-005
+ Component Sizing Information, Controller:WaterCoil, VAV_3_HEATC_CONTROLLER, Maximum Actuated Flow [m3/s], 2.11038E-003
+ Component Sizing Information, Controller:OutdoorAir, VAV_5_OA_CONTROLLER, Maximum Outdoor Air Flow Rate [m3/s], 4.45586
  Component Sizing Information, Controller:OutdoorAir, VAV_5_OA_CONTROLLER, Minimum Outdoor Air Flow Rate [m3/s], 1.19857
- Component Sizing Information, Coil:Cooling:Water, VAV_5_COOLC, Design Size Design Coil Load [W], 106004.56701
- Component Sizing Information, Coil:Cooling:Water, VAV_5_COOLC, Design Size Design Water Flow Rate [m3/s], 3.78617E-003
- Component Sizing Information, Coil:Cooling:Water, VAV_5_COOLC, Design Size Design Air Flow Rate [m3/s], 4.44043
- Component Sizing Information, Coil:Cooling:Water, VAV_5_COOLC, Design Size Design Inlet Air Temperature [C], 24.81638
+ Component Sizing Information, Coil:Cooling:Water, VAV_5_COOLC, Design Size Design Coil Load [W], 105726.46389
+ Component Sizing Information, Coil:Cooling:Water, VAV_5_COOLC, Design Size Design Water Flow Rate [m3/s], 3.77624E-003
+ Component Sizing Information, Coil:Cooling:Water, VAV_5_COOLC, Design Size Design Air Flow Rate [m3/s], 4.45586
+ Component Sizing Information, Coil:Cooling:Water, VAV_5_COOLC, Design Size Design Inlet Air Temperature [C], 24.78717
  Component Sizing Information, Coil:Cooling:Water, VAV_5_COOLC, Design Size Design Inlet Water Temperature [C], 6.67000
  Component Sizing Information, Coil:Cooling:Water, VAV_5_COOLC, Design Size Design Outlet Air Temperature [C], 12.80000
- Component Sizing Information, Coil:Cooling:Water, VAV_5_COOLC, Design Size Design Inlet Air Humidity Ratio, 1.16281E-002
+ Component Sizing Information, Coil:Cooling:Water, VAV_5_COOLC, Design Size Design Inlet Air Humidity Ratio, 1.16189E-002
  Component Sizing Information, Coil:Cooling:Water, VAV_5_COOLC, Design Size Design Outlet Air Humidity Ratio, 8.50000E-003
-Water Cooling Coil Capacity Information,Coil:Cooling:Water,VAV_5_COOLC,111249.38,76702.92,34546.46,0.69,12316.28,124.92
- Component Sizing Information, Coil:Heating:Water, VAV_5_HEATC, Design Size Design Coil Load [W], 52327.00585
- Component Sizing Information, Coil:Heating:Water, VAV_5_HEATC, Design Size Maximum Water Flow Rate [m3/s], 1.12655E-003
- Component Sizing Information, Coil:Heating:Water, VAV_5_HEATC, Design Size U-Factor Times Area Value [W/K], 705.40395
-Water Heating Coil Capacity Information,Coil:Heating:Water,VAV_5_HEATC,34856.53
- Component Sizing Information, Fan:VariableVolume, VAV_5_FAN, Design Size Maximum Flow Rate [m3/s], 4.44043
- Component Sizing Information, Controller:WaterCoil, VAV_5_COOLC_CONTROLLER, Maximum Actuated Flow [m3/s], 3.78617E-003
- Component Sizing Information, Controller:WaterCoil, VAV_5_COOLC_CONTROLLER, Controller Convergence Tolerance, 1.25771E-004
- Component Sizing Information, Controller:WaterCoil, VAV_5_HEATC_CONTROLLER, Maximum Actuated Flow [m3/s], 1.12655E-003
- Component Sizing Information, Chiller:Electric:ReformulatedEIR, COOLSYS1 CHILLER 1, Reference Chilled Water Flow Rate [m3/s], 5.73500E-002
- Component Sizing Information, Chiller:Electric:ReformulatedEIR, COOLSYS1 CHILLER 1, Reference Capacity [W], 1607275.98615
- Component Sizing Information, Chiller:Electric:ReformulatedEIR, COOLSYS1 CHILLER 1, Reference Condenser Water Flow Rate [m3/s], 8.04440E-002
+Water Cooling Coil Capacity Information,Coil:Cooling:Water,VAV_5_COOLC,111491.80,76539.50,34952.30,0.69,12305.67,124.81
+ Component Sizing Information, Coil:Heating:Water, VAV_5_HEATC, Design Size Design Coil Load [W], 52123.13757
+ Component Sizing Information, Coil:Heating:Water, VAV_5_HEATC, Design Size Maximum Water Flow Rate [m3/s], 1.12216E-003
+ Component Sizing Information, Coil:Heating:Water, VAV_5_HEATC, Design Size U-Factor Times Area Value [W/K], 703.23464
+Water Heating Coil Capacity Information,Coil:Heating:Water,VAV_5_HEATC,34766.15
+ Component Sizing Information, Fan:VariableVolume, VAV_5_FAN, Design Size Maximum Flow Rate [m3/s], 4.45586
+ Component Sizing Information, Controller:WaterCoil, VAV_5_COOLC_CONTROLLER, Maximum Actuated Flow [m3/s], 3.77624E-003
+ Component Sizing Information, Controller:WaterCoil, VAV_5_COOLC_CONTROLLER, Controller Convergence Tolerance, 1.26102E-004
+ Component Sizing Information, Controller:WaterCoil, VAV_5_HEATC_CONTROLLER, Maximum Actuated Flow [m3/s], 1.12216E-003
+ Component Sizing Information, Chiller:Electric:ReformulatedEIR, COOLSYS1 CHILLER 1, Reference Chilled Water Flow Rate [m3/s], 5.72919E-002
+ Component Sizing Information, Chiller:Electric:ReformulatedEIR, COOLSYS1 CHILLER 1, Reference Capacity [W], 1605647.57575
+ Component Sizing Information, Chiller:Electric:ReformulatedEIR, COOLSYS1 CHILLER 1, Reference Condenser Water Flow Rate [m3/s], 8.03625E-002
 ! <Chiller Standard Rating Information>, Component Type, Component Name, IPLV in SI Units {W/W}, IPLV in IP Units {Btu/W-h}
  Chiller Standard Rating Information, Chiller:Electric:ReformulatedEIR, COOLSYS1 CHILLER 1, 7.81, 26.66
- Component Sizing Information, Chiller:Electric:ReformulatedEIR, COOLSYS1 CHILLER 2, Reference Chilled Water Flow Rate [m3/s], 5.73500E-002
- Component Sizing Information, Chiller:Electric:ReformulatedEIR, COOLSYS1 CHILLER 2, Reference Capacity [W], 1607275.98615
- Component Sizing Information, Chiller:Electric:ReformulatedEIR, COOLSYS1 CHILLER 2, Reference Condenser Water Flow Rate [m3/s], 8.04440E-002
- Chiller Standard Rating Information, Chiller:Electric:ReformulatedEIR, COOLSYS1 CHILLER 2, 7.81, 26.66
- Component Sizing Information, PlantLoop, COOLSYS1, Maximum Loop Flow Rate [m3/s], 0.11470
- Component Sizing Information, PlantLoop, COOLSYS1, Plant Loop Volume [m3], 43.01253
- Component Sizing Information, Boiler:HotWater, HEATSYS1 BOILER, Nominal Capacity [W], 2275078.75007
- Component Sizing Information, Boiler:HotWater, HEATSYS1 BOILER, Design Water Flow Rate [m3/s], 4.87901E-002
- Component Sizing Information, PlantLoop, HEATSYS1, Maximum Loop Flow Rate [m3/s], 4.87901E-002
- Component Sizing Information, PlantLoop, HEATSYS1, Plant Loop Volume [m3], 18.29630
- Component Sizing Information, PlantLoop, SWHSYS1, Maximum Loop Flow Rate [m3/s], 2.68800E-004
- Component Sizing Information, PlantLoop, SWHSYS1, Plant Loop Volume [m3], 0.10080
- Component Sizing Information, WaterHeater:Mixed, SWHSYS1 WATER HEATER, Use Side Design Flow Rate [m3/s], 2.68800E-004
-Water Heater Information,WaterHeater:Mixed,SWHSYS1 WATER HEATER,0.7571,845000.0,0.903,0.5929
- Component Sizing Information, CoolingTower:SingleSpeed, TOWERWATERSYS COOLTOWER, Design Water Flow Rate [m3/s], 0.16089
- Component Sizing Information, CoolingTower:SingleSpeed, TOWERWATERSYS COOLTOWER, Fan Power at Design Air Flow Rate [W], 39538.54020
- Component Sizing Information, CoolingTower:SingleSpeed, TOWERWATERSYS COOLTOWER, Design Air Flow Rate [m3/s], 106.19660
- Component Sizing Information, CoolingTower:SingleSpeed, TOWERWATERSYS COOLTOWER, U-Factor Times Area Value at Design Air Flow Rate [W/C], 228677.02012
- Component Sizing Information, CoolingTower:SingleSpeed, TOWERWATERSYS COOLTOWER, Free Convection Regime Air Flow Rate [m3/s], 10.61966
- Component Sizing Information, CoolingTower:SingleSpeed, TOWERWATERSYS COOLTOWER, Free Convection U-Factor Times Area Value [W/K], 22867.70201
- Component Sizing Information, CondenserLoop, TOWERWATERSYS, Maximum Loop Flow Rate [m3/s], 0.16089
- Component Sizing Information, CondenserLoop, TOWERWATERSYS, Condenser Loop Volume [m3], 60.33302
- Component Sizing Information, Pump:VariableSpeed, COOLSYS1 PUMP, Rated Flow Rate [m3/s], 0.11470
- Component Sizing Information, Pump:VariableSpeed, COOLSYS1 PUMP, Rated Power Consumption [W], 29304.40308
- Component Sizing Information, Pump:VariableSpeed, HEATSYS1 PUMP, Rated Flow Rate [m3/s], 4.87901E-002
- Component Sizing Information, Pump:VariableSpeed, HEATSYS1 PUMP, Rated Power Consumption [W], 12821.40333
- Component Sizing Information, Pump:VariableSpeed, SWHSYS1 PUMP, Rated Flow Rate [m3/s], 2.68800E-004
- Component Sizing Information, Pump:VariableSpeed, SWHSYS1 PUMP, Rated Power Consumption [W], 72.71466
- Component Sizing Information, Pump:ConstantSpeed, TOWERWATERSYS PUMP, Rated Flow Rate [m3/s], 0.16089
- Component Sizing Information, Pump:ConstantSpeed, TOWERWATERSYS PUMP, Rated Power Consumption [W], 42522.24249
-! <Environment>,Environment Name,Environment Type, Start Date, End Date, Start DayOfWeek, Duration {#days}, Source:Start DayOfWeek,  Use Daylight Saving, Use Holidays, Apply Weekend Holiday Rule,  Use Rain Values, Use Snow Values
-! <Environment:Special Days>, Special Day Name, Special Day Type, Source, Start Date, Duration {#days}
-! <Environment:Daylight Saving>, Daylight Saving Indicator, Source, Start Date, End Date
-! <Environment:WarmupDays>, NumberofWarmupDays
-Environment,587017 587017 587017 TMY2 WMO#=587017,WeatherFileRunPeriod,07/01,07/31,Thursday,31,Use RunPeriod Specified Day,No ,No ,Yes,Yes,Yes
-Environment:Daylight Saving,Yes,InputFile,03/14,11/07
-Environment:Special Days,NEW YEARS DAY,Holiday,InputFile,01/01,  1
-Environment:Special Days,VETERANS DAY,Holiday,InputFile,11/11,  1
-Environment:Special Days,CHRISTMAS,Holiday,InputFile,12/25,  1
-Environment:Special Days,INDEPENDENCE DAY,Holiday,InputFile,07/05,  1
-Environment:Special Days,MLK DAY,Holiday,InputFile,01/18,  1
-Environment:Special Days,PRESIDENTS DAY,Holiday,InputFile,02/15,  1
-Environment:Special Days,MEMORIAL DAY,Holiday,InputFile,05/31,  1
-Environment:Special Days,LABOR DAY,Holiday,InputFile,09/06,  1
-Environment:Special Days,COLUMBUS DAY,Holiday,InputFile,10/11,  1
-Environment:Special Days,THANKSGIVING,Holiday,InputFile,11/25,  1
-Environment:WarmupDays,  6
+ Component Sizing Information, Chiller:Electric:ReformulatedEIR, COOLSYS1 CHILLER 2, Reference Chilled Water Flow Rate [m3/s], 5.72919E-002

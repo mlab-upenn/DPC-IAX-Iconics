@@ -5,7 +5,7 @@ import subprocess
 import os
 
 class ep_process:
-	def __init__(self, ip, port, building_path, isWindows=False):
+	def __init__(self, ip, port, building_path, weather, isWindows=False):
 		print("Starting E+")
 		FNULL = open('epluslog', 'w')
 		global eplus_dir
@@ -18,18 +18,18 @@ class ep_process:
 			eplus_script = eplus_dir + 'RunEplus'
 			idf_path = building_path + '\\' + idf[:-4]
 			print(idf_path)
-			self.p = subprocess.Popen([eplus_script, idf_path, 'SPtMasterTable_587017_2012_amy'], stdout=FNULL, shell=True, cwd=building_path)		
+			self.p = subprocess.Popen([eplus_script, idf_path, weather], stdout=FNULL, shell=True, cwd=building_path)		
 		else:
 			eplus_script = eplus_dir + 'runenergyplus'
 			idf_path = building_path + '/' + idf[:-4]
-			self.p = subprocess.Popen([eplus_script, idf_path, 'SPtMasterTable_587017_2012_amy'], stdout=FNULL)
+			self.p = subprocess.Popen([eplus_script, idf_path, weather], stdout=FNULL)
 
 		print(eplus_script, building_path, 'SPtMasterTable_587017_2012_amy')
 		
 		s = socket.socket()
 		s.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1) 
 		s.bind((ip, port))
-		print("Started Wating for connection on %s %s", ip, port)
+		print("Started Wating for connection on %s %s" 	% (ip, port))
 		s.listen(1)
 		remote, address = s.accept()
 		self.remote = remote
@@ -101,6 +101,7 @@ class ep_process:
 	def decode_packet_simple(self, packet):
 		comp = packet.split(" ")
 		comp = comp[:-1]
+		print(comp)
 		comp_values = [float(s) for s in comp]
 		output = []
 		if comp_values[0] == 2: #Version 2
