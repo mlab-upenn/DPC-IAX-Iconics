@@ -83,12 +83,35 @@ def write_everything(cw, lil, clg, time):
 	{ "PointName": "@Matrikon.OPC.Simulation.1\\EPSimServer.EnergyPlus.Control.TimeStep.Value", "Value": time }]
 	r = requests.post("http://localhost/ODataConnector/rest/RealtimeData/Write", headers=  headers, data = json.dumps(payload))
 
+def write_hotel_inputs(clg, kclg, gclg, air, cw, time):
+	payload = [ { "PointName": "@Matrikon.OPC.Simulation.1\\EPSimServer.EnergyPlus.Inputs.clgsetp.Value", "Value": clg }, 
+	{ "PointName": "@Matrikon.OPC.Simulation.1\\EPSimServer.EnergyPlus.Inputs.kclgsetp.Value", "Value": kclg },
+	{ "PointName": "@Matrikon.OPC.Simulation.1\\EPSimServer.EnergyPlus.Inputs.gclgsetp.Value", "Value": gclg },
+	{ "PointName": "@Matrikon.OPC.Simulation.1\\EPSimServer.EnergyPlus.Inputs.airsetp.Value", "Value": air },
+	{ "PointName": "@Matrikon.OPC.Simulation.1\\EPSimServer.EnergyPlus.Inputs.cwsetp.Value", "Value": cw },
+	{ "PointName": "@Matrikon.OPC.Simulation.1\\EPSimServer.EnergyPlus.Control.TimeStep.Value", "Value": time }]
+	r = requests.post("http://localhost/ODataConnector/rest/RealtimeData/Write", headers=  headers, data = json.dumps(payload))
+
+
 
 def get_power():
 	r_get = requests.get("http://localhost/ODataConnector/rest/RealtimeData?PointName=@Matrikon.OPC.Simulation.1\\EPSimServer.EnergyPlus.Outputs.WholeBuilding.FacilityTotalElectricDemandPower.Value")
 	data = json.loads(r_get.text)
 	return parseValue(data)
 
+def get_hotel_outputs():
+	output_tags = ["http://localhost/ODataConnector/rest/RealtimeData?PointName=@Matrikon.OPC.Simulation.1\\EPSimServer.EnergyPlus.Outputs.WholeBuilding.FacilityTotalElectricDemandPower.Value",
+	"http://localhost/ODataConnector/rest/RealtimeData?PointName=@Matrikon.OPC.Simulation.1\\EPSimServer.EnergyPlus.Outputs.EMS.DayOfWeek.Value",
+	"http://localhost/ODataConnector/rest/RealtimeData?PointName=@Matrikon.OPC.Simulation.1\\EPSimServer.EnergyPlus.Outputs.EMS.TimeOfDay.Value",
+	"http://localhost/ODataConnector/rest/RealtimeData?PointName=@Matrikon.OPC.Simulation.1\\EPSimServer.EnergyPlus.Outputs.Environment.Drybulb.Value",
+	"http://localhost/ODataConnector/rest/RealtimeData?PointName=@Matrikon.OPC.Simulation.1\\EPSimServer.EnergyPlus.Outputs.Environment.Humidity.Value"]
+	outputs = []
+	for tag in output_tags:
+		r_get = requests.get(tag)
+		data = json.loads(r_get.text)
+		outputs.append(parseValue(data))
+
+	return outputs
 
 
 def get_status():
@@ -100,7 +123,7 @@ def get_status():
 def get_sim_time():
 	r_get = requests.get("http://localhost/ODataConnector/rest/RealtimeData?PointName=@Matrikon.OPC.Simulation.1\\EPSimServer.EnergyPlus.Outputs.EMS.TimeOfDay.Value")
 	data = json.loads(r_get.text)
-	return parseValue(data)
+	return parseValue(data) 
 
 
 def get_sim_day():
@@ -180,8 +203,15 @@ else:
 		# 	if sim_time.is_integer():
 		# 		print("Hour: " + str(sim_time) + " " + str(timeSteps))
 
+		hotel_outputs = get_hotel_outputs()
+		total_load = hotel_outputs[0]
+		dow = hotel_outputs[1]
+		tod = hotel_outputs[2]
+		ambient = hotel_outputs[3]
+		humidity = hotel_outputs[4]
 
-		start_w = time.clock()
+		#write_hotel_inputs(clg, kclg, clg, air, cw, time)
+
 
 		if timeSteps % 288 < 12 * 14:
 			write_everything(6.3, 0.8, 26, timeSteps)
@@ -191,11 +221,6 @@ else:
 			write_everything(6.3, 0.8, 26, timeSteps)
 		
 
-
-
-
-		end_w = time.clock()
-		sum_write_time = sum_write_time + (end_w-start_w)
 		i = i+1
 
 		# start_t = time.clock()
@@ -204,19 +229,6 @@ else:
 		# sum_time_time = sum_time_time + (end_t - start_t)		
 		times.append(timeSteps)
 		timeSteps = timeSteps + 1
-
-
-		start_r = time.clock()
-		
-
-		power = get_power()
-		outputs.append(power)
-
-
-
-		end_r = time.clock()		
-		sum_read_time = sum_read_time + (end_r - start_r)
-		outputs.append(power)
 
 	end_sim_time = time.clock()
 	control_bridge(2)
