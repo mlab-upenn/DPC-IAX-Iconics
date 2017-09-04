@@ -13,7 +13,7 @@ opc.read(input_tags, group = 'inputs')
 
 pyEp.set_bcvtb_home('C:\Python27\Lib\site-packages\pyEp\\bcvtb')
 pyEp.set_energy_plus_dir('C:\EnergyPlusV8-1-0\\')
-path_to_buildings = 'C:\Users\Expresso Logic\Documents\GitHub\DPC-IAX-Iconics\EplusBuildings'
+path_to_buildings = 'C:\Users\Expresso Logic\Documents\GitHub\DPC-IAX-Iconics\ePlusBuildings'
 eps = []
 timesteps = []
 
