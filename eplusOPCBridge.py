@@ -1,6 +1,7 @@
 import OpenOPC
 import pyEp
 import time
+import hotel_mapping as building_mapping
 
 opc = OpenOPC.open_client()
 opc.connect('Matrikon.OPC.Simulation.1')
@@ -10,12 +11,13 @@ input_tags = opc.list('EPSimServer.EnergyPlus.Inputs.*')
 output_tags = opc.list('EPSimServer.EnergyPlus.Outputs.*.*', recursive=True)
 opc.read(input_tags, group = 'inputs')
 
-
 pyEp.set_bcvtb_home('C:\Python27\Lib\site-packages\pyEp\\bcvtb')
 pyEp.set_energy_plus_dir('C:\EnergyPlusV8-1-0\\')
 path_to_buildings = 'C:\Users\Expresso Logic\Documents\GitHub\DPC-IAX-Iconics\EplusBuildings'
 eps = []
 timesteps = []
+
+weather_file = 'USA_IL_Chicago-OHare.Intl.AP.725300_TMY3'
 
 sim_total_time = 0.0
 wait_total_time = 0.0
@@ -34,7 +36,7 @@ while True:
 			for config in configs:
 				building_path = path_to_buildings + "\\" + config[1]
 				print(building_path)
-				eps.append(pyEp.ep_process('localhost', config[0], building_path, True))
+				eps.append(pyEp.ep_process('localhost', config[0], building_path, weather_file, True))
 				timesteps.append(0)
 			print("E+ Iniitalized")
 		elif command is 2:
@@ -61,26 +63,15 @@ while True:
 			if timesteps[idx] % 12 == 0:
 				print(timesteps[idx])
 			output = ep.decode_packet_simple(ep.read())
-			power = output[0]
-			time_of_day = output[1]
-			day_of_week = output[2]
-			bot_temp = output[13]
-			mid_temp = output[17]
-			top_temp = output[21]
 
+			mapping = building_mapping.map_outputs(output)
 
-			if round(float(time_of_day), 2).is_integer():
-				print("Hour: " + str(time_of_day) + " " + str(timesteps[idx]))
-
-			opc.write(('EPSimServer.EnergyPlus.Outputs.WholeBuilding.FacilityTotalElectricDemandPower', power))
-			opc.write(('EPSimServer.EnergyPlus.Outputs.EMS.DayOfWeek', day_of_week))
-			opc.write(('EPSimServer.EnergyPlus.Outputs.EMS.TimeOfDay', time_of_day))
-			opc.write(('EPSimServer.EnergyPlus.Outputs.ZoneTemperature.Perimeter_bot_ZN_2', bot_temp))
-			opc.write(('EPSimServer.EnergyPlus.Outputs.ZoneTemperature.Perimeter_mid_ZN_2', mid_temp))
-			opc.write(('EPSimServer.EnergyPlus.Outputs.ZoneTemperature.Perimeter_top_ZN_2', top_temp))
+			for key,value in mapping.iteritems():
+				opc.write((key,value))
 
 			#Wait for controller to update to next time step
 			new_time_step, status, _ = opc.read('EPSimServer.EnergyPlus.Control.TimeStep')		
+			print(new_time_step)
 			if status is 'Error':
 				print("Error Reading TimeStep")
 				continue
@@ -100,10 +91,13 @@ while True:
 			wait_total_time = wait_total_time + (end_w - start_w)
 			#Read new inputs from the controller and give them to EnergyPlus
 			
-			cw,_,_ = opc.read('EPSimServer.EnergyPlus.Inputs.cwsetp')
-			lil,_,_ = opc.read('EPSimServer.EnergyPlus.Inputs.lilsetp')
-			clg,_,_ = opc.read('EPSimServer.EnergyPlus.Inputs.clgsetp')
-			ep.write(ep.encode_packet_simple([clg, cw, lil], new_time_step))
+			inputs = building_mapping.map_inputs() 
+			setpoints = []
+			for tag in inputs:
+				setpoint,_,_ = opc.read(tag)
+				setpoints.append(setpoint)
+				
+			ep.write(ep.encode_packet_simple(setpoints, new_time_step))
 			timesteps[idx] = new_time_step
 			end = time.clock()
 			sim_total_time = sim_total_time + (end-start)

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Canvas Background="#FFFFFFFF" Width="1920" Height="1020" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:iwm="clr-namespace:Ico.Windows.Media;assembly=IcoWPF" xmlns:gwx="clr-namespace:Ico.Gwx;assembly=GwxRuntimeCore" xmlns:script="clr-namespace:Ico.Script;assembly=IcoScriptEngine" xmlns:ic="clr-namespace:Ico.Collections;assembly=IcoCollections" xmlns:it="clr-namespace:Ico.Twx;assembly=TwxViewControl" xmlns:iws="clr-namespace:Ico.WPF.Specialized;assembly=IcoWPFSpecialized" xmlns:iwc="clr-namespace:Ico.Windows.Controls;assembly=IcoWPF" xmlns:idd="clr-namespace:Ico.Data.DataConnector;assembly=IcoDataConnector">
+  <Canvas.Resources>
+    <BitmapImage x:Key="GwxThumbnailImageKey">
+      <iwm:BitmapImageInfo.StreamSource>
+        <iwm:Base64Stream Data="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" />
+      </iwm:BitmapImageInfo.StreamSource>
+    </BitmapImage>
+  </Canvas.Resources>
+  <gwx:GwxDocument.GwxDocument>
+    <gwx:GwxDocument FileVersion="10.93.175.00" ScanRate="500">
+      <gwx:GwxDocument.ScriptCodeManager>
+        <script:ScriptCodeManager>
+          <script:ScriptCodeManager.AssemblyReferences>
+            <ic:AssemblyReference AssemblyName="mscorlib" />
+            <ic:AssemblyReference AssemblyName="System" />
+            <ic:AssemblyReference AssemblyName="System.Core" />
+            <ic:AssemblyReference AssemblyName="System.Data" />
+            <ic:AssemblyReference AssemblyName="System.Xml" />
+            <ic:AssemblyReference AssemblyName="System.Drawing" />
+            <ic:AssemblyReference AssemblyName="System.Windows.Forms" />
+            <ic:AssemblyReference AssemblyName="WindowsBase" />
+            <ic:AssemblyReference AssemblyName="PresentationCore" />
+            <ic:AssemblyReference AssemblyName="PresentationFramework" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCore" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeCoreCommands" />
+            <ic:AssemblyReference AssemblyName="GwxRuntimeViewControl" />
+            <ic:AssemblyReference AssemblyName="GwxConfigCore" />
+            <ic:AssemblyReference AssemblyName="IcoComponentModel" />
+            <ic:AssemblyReference AssemblyName="IcoFwxClientWrapper" />
+            <ic:AssemblyReference AssemblyName="TwxViewControl" AssemblyCodebase="file:///C:/Program Files/ICONICS/GENESIS64/Components/TwxViewControl.DLL" />
+            <ic:AssemblyReference AssemblyName="IcoWPFSpecialized" AssemblyCodebase="file:///C:/Program Files/ICONICS/GENESIS64/Components/IcoWPFSpecialized.DLL" />
+          </script:ScriptCodeManager.AssemblyReferences>
+        </script:ScriptCodeManager>
+      </gwx:GwxDocument.ScriptCodeManager>
+    </gwx:GwxDocument>
+  </gwx:GwxDocument.GwxDocument>
+  <it:TwxViewControl FileVersion="10.93.175.00" FontFamily="Segoe UI" FontSize="12" Width="359" Height="353.666667" AllowDrop="True" Canvas.Left="17.666667" Canvas.Top="112.333333">
+    <it:TwxViewControl.Items>
+      <iwc:MultipleTabItem IsSelected="True" Header="Tab">
+        <it:TwxChartComponent LegendHeaderBorder="#FFAAAAAA" LegendHeaderForeground="#FF000000" LegendHeaderBackground="#FFDDDDDD" LegendActiveSelectionBackground="#883399FF" LegendActiveSelectionForeground="#FFFFFFFF" LegendInactiveSelectionBackground="#88EEEEEE" LegendInactiveSelectionForeground="#FF333333" LegendRowBackground="{x:Null}" LegendRowForeground="#FF000000" LegendBackground="#FFFFFFFF" Title="ChartView" ChartBackground="#FFFFFFFF" ChartInnerBackground="#FFFFFFFF" ChartInnerBorder="#FF000000" SplitterColor="#FFF2F2F2" CursorStroke="#883399FF" SecondCursorStroke="#88F79646" GridXStroke="#FFAAAAAA" GridYStroke="#FFAAAAAA" SummaryTrendPeriodAlignment="Minute" SummaryTrendPeriodValue="15" SummaryChartWidth="100" SummaryCursorStroke="#88444444" SummaryCursorFill="#88CCCCCC" ShowSummaryScrollbar="False" TrendPeriodAlignment="Minute" TrendPeriodValue="5" RefreshRateAlignment="Second" SamplingIntervalAlignment="Second" HistoryRefreshRateAlignment="Second" HistoryRefreshRateValue="5" ZoomFill="#883399FF" FontStyle="Normal" FontWeight="Normal">
+          <it:TwxChartComponent.SummaryTrendAxis>
+            <it:TwxAxis LabelForeground="#FF000000" />
+          </it:TwxChartComponent.SummaryTrendAxis>
+          <it:TwxChartComponent.Series>
+            <it:TwxSeries Settings="{x:Null}">
+              <it:TwxSeries.Pens>
+                <it:TwxChartPen AutoQualityStyle="True" InheritQualityPlotMode="True" ShowPenMarker="True" RangeMode="Default" Stroke="#FF276AAD" Fill="#FF8EBAE6">
+                  <it:TwxChartPen.DataConnectionConfiguration>
+                    <idd:DataConnectorConfiguration PointName="@ICONICS.HyperHistorian.1\hh:\Configuration\Signals:Ramp.History" RawData="version=2;usagetype=2;" />
+                  </it:TwxChartPen.DataConnectionConfiguration>
+                </it:TwxChartPen>
+              </it:TwxSeries.Pens>
+            </it:TwxSeries>
+          </it:TwxChartComponent.Series>
+        </it:TwxChartComponent>
+      </iwc:MultipleTabItem>
+    </it:TwxViewControl.Items>
+  </it:TwxViewControl>
+  <it:TwxViewControl FileVersion="10.93.175.00" ToolBarVisibility="Visible" FontFamily="Segoe UI" FontSize="12" Width="597.666667" Height="417" AllowDrop="True" Canvas.Left="552.333333" Canvas.Top="106.333334">
+    <it:TwxViewControl.Items>
+      <iwc:MultipleTabItem IsSelected="True" Header="Tab">
+        <it:TwxChartComponent LegendHeaderBorder="#FFAAAAAA" LegendHeaderForeground="#FF000000" LegendHeaderBackground="#FFDDDDDD" LegendActiveSelectionBackground="#883399FF" LegendActiveSelectionForeground="#FFFFFFFF" LegendInactiveSelectionBackground="#88EEEEEE" LegendInactiveSelectionForeground="#FF333333" LegendRowBackground="{x:Null}" LegendRowForeground="#FF000000" LegendBackground="#FFFFFFFF" ShowLegend="True" Title="ChartView" ChartBackground="#FFFFFFFF" ChartInnerBackground="#FFFFFFFF" ChartInnerBorder="#FF000000" SplitterColor="#FFF2F2F2" CursorStroke="#883399FF" SecondCursorStroke="#88F79646" GridXStroke="#FFAAAAAA" GridYStroke="#FFAAAAAA" SummaryTrendPeriodAlignment="Minute" SummaryTrendPeriodValue="15" SummaryChartWidth="100" SummaryCursorStroke="#88444444" SummaryCursorFill="#88CCCCCC" ShowSummaryScrollbar="False" TrendPeriodAlignment="Minute" TrendPeriodValue="5" RefreshRateAlignment="Second" SamplingIntervalAlignment="Second" HistoryRefreshRateAlignment="Second" HistoryRefreshRateValue="5" ZoomFill="#883399FF" FontStyle="Normal" FontWeight="Normal">
+          <it:TwxChartComponent.SummaryTrendAxis>
+            <it:TwxAxis LabelForeground="#FF000000" />
+          </it:TwxChartComponent.SummaryTrendAxis>
+          <it:TwxChartComponent.Series>
+            <it:TwxSeries Settings="{x:Null}">
+              <it:TwxSeries.Pens>
+                <it:TwxChartPen AutoQualityStyle="True" InheritQualityPlotMode="True" ShowPenMarker="True" RangeMinimumMode="Manual" RangeMaximumMode="Manual" RangeMode="Default" ManualRangeMaximumTag="1500000" Stroke="#FFB32225" Fill="#FFE98B8D">
+                  <it:TwxChartPen.DataConnectionConfiguration>
+                    <idd:DataConnectorConfiguration PointName="@ICONICS.HyperHistorian.1\hh:\Configuration\EnergyPlusHistorian:PowerConsumption.History" RawData="version=2;usagetype=2;" />
+                  </it:TwxChartPen.DataConnectionConfiguration>
+                </it:TwxChartPen>
+              </it:TwxSeries.Pens>
+            </it:TwxSeries>
+          </it:TwxChartComponent.Series>
+        </it:TwxChartComponent>
+      </iwc:MultipleTabItem>
+    </it:TwxViewControl.Items>
+  </it:TwxViewControl>
+  <it:TwxViewControl FileVersion="10.93.175.00" FontFamily="Segoe UI" FontSize="12" Width="481" Height="426.333334" AllowDrop="True" Canvas.Left="1276.333334" Canvas.Top="49">
+    <it:TwxViewControl.Items>
+      <iwc:MultipleTabItem IsSelected="True" Header="Tab">
+        <it:TwxChartComponent LegendHeaderBorder="#FFAAAAAA" LegendHeaderForeground="#FF000000" LegendHeaderBackground="#FFDDDDDD" LegendActiveSelectionBackground="#883399FF" LegendActiveSelectionForeground="#FFFFFFFF" LegendInactiveSelectionBackground="#88EEEEEE" LegendInactiveSelectionForeground="#FF333333" LegendRowBackground="{x:Null}" LegendRowForeground="#FF000000" LegendBackground="#FFFFFFFF" Title="ChartView" ChartBackground="#FFFFFFFF" ChartInnerBackground="#FFFFFFFF" ChartInnerBorder="#FF000000" SplitterColor="#FFF2F2F2" CursorStroke="#883399FF" SecondCursorStroke="#88F79646" GridXStroke="#FFAAAAAA" GridYStroke="#FFAAAAAA" SummaryTrendPeriodAlignment="Minute" SummaryTrendPeriodValue="15" SummaryChartWidth="100" SummaryCursorStroke="#88444444" SummaryCursorFill="#88CCCCCC" ShowSummaryScrollbar="False" TrendPeriodAlignment="Minute" TrendPeriodValue="5" RefreshRateAlignment="Second" SamplingIntervalAlignment="Second" HistoryRefreshRateAlignment="Second" HistoryRefreshRateValue="5" ZoomFill="#883399FF" FontStyle="Normal" FontWeight="Normal">
+          <it:TwxChartComponent.SummaryTrendAxis>
+            <it:TwxAxis LabelForeground="#FF000000" />
+          </it:TwxChartComponent.SummaryTrendAxis>
+          <it:TwxChartComponent.Series>
+            <it:TwxSeries Settings="{x:Null}">
+              <it:TwxSeries.Pens>
+                <it:TwxChartPen AutoQualityStyle="True" InheritQualityPlotMode="True" ShowPenMarker="True" RangeMinimumMode="Manual" RangeMaximumMode="Manual" RangeMode="Default" ManualRangeMinimumTag="23" ManualRangeMaximumTag="30" Stroke="#FF6AB123" Fill="#FFBAE98B">
+                  <it:TwxChartPen.DataConnectionConfiguration>
+                    <idd:DataConnectorConfiguration PointName="@ICONICS.HyperHistorian.1\hh:\Configuration\EnergyPlusHistorian\InputsHistorian:clgsetp.History" RawData="version=2;usagetype=2;" />
+                  </it:TwxChartPen.DataConnectionConfiguration>
+                </it:TwxChartPen>
+              </it:TwxSeries.Pens>
+            </it:TwxSeries>
+          </it:TwxChartComponent.Series>
+        </it:TwxChartComponent>
+      </iwc:MultipleTabItem>
+    </it:TwxViewControl.Items>
+  </it:TwxViewControl>
+  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Width="440.333333" Height="63.666667" gwx:GwxProperties.Stretch="Uniform" Canvas.Left="19.666667" Canvas.Top="22.333333">
+    <TextBlock Text="Historical" LayoutTransform="3.36257312030075,0,0,3.36257312030075,0,0" />
+  </Label>
+  <Label FontFamily="Segoe UI" FontSize="12" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsTabStop="True" Width="417" Height="77" gwx:GwxProperties.Stretch="Uniform" Canvas.Left="34.333333" Canvas.Top="508.333333">
+    <TextBlock Text="Real-Time" LayoutTransform="4.19799498746867,0,0,4.19799498746867,0,0" />
+  </Label>
+  <it:TwxViewControl FileVersion="10.93.175.00" FontFamily="Segoe UI" FontSize="12" Width="425.666667" Height="361.666667" AllowDrop="True" Canvas.Left="51" Canvas.Top="619">
+    <it:TwxViewControl.Items>
+      <iwc:MultipleTabItem IsSelected="True" Header="Tab">
+        <it:TwxChartComponent LegendHeaderBorder="#FFAAAAAA" LegendHeaderForeground="#FF000000" LegendHeaderBackground="#FFDDDDDD" LegendActiveSelectionBackground="#883399FF" LegendActiveSelectionForeground="#FFFFFFFF" LegendInactiveSelectionBackground="#88EEEEEE" LegendInactiveSelectionForeground="#FF333333" LegendRowBackground="{x:Null}" LegendRowForeground="#FF000000" LegendBackground="#FFFFFFFF" Title="ChartView" ChartBackground="#FFFFFFFF" ChartInnerBackground="#FFFFFFFF" ChartInnerBorder="#FF000000" SplitterColor="#FFF2F2F2" CursorStroke="#883399FF" SecondCursorStroke="#88F79646" GridXStroke="#FFAAAAAA" GridYStroke="#FFAAAAAA" SummaryTrendPeriodAlignment="Minute" SummaryTrendPeriodValue="15" SummaryChartWidth="100" SummaryCursorStroke="#88444444" SummaryCursorFill="#88CCCCCC" ShowSummaryScrollbar="False" TrendPeriodAlignment="Minute" TrendPeriodValue="5" RefreshRateAlignment="Second" SamplingIntervalAlignment="Second" HistoryRefreshRateAlignment="Second" HistoryRefreshRateValue="5" ZoomFill="#883399FF" FontStyle="Normal" FontWeight="Normal">
+          <it:TwxChartComponent.SummaryTrendAxis>
+            <it:TwxAxis LabelForeground="#FF000000" />
+          </it:TwxChartComponent.SummaryTrendAxis>
+          <it:TwxChartComponent.Series>
+            <it:TwxSeries Settings="{x:Null}">
+              <it:TwxSeries.Pens>
+                <it:TwxChartPen AutoQualityStyle="True" InheritQualityPlotMode="True" ShowPenMarker="True" RangeMinimumMode="Manual" RangeMaximumMode="Manual" RangeMode="Default" ManualRangeMaximumTag="1500000" Stroke="#FF27AD9C" Fill="#FF8EE6DB">
+                  <it:TwxChartPen.DataConnectionConfiguration>
+                    <idd:DataConnectorConfiguration PointName="@Matrikon.OPC.Simulation.1\EPSimServer.EnergyPlus.Outputs.WholeBuilding.FacilityTotalElectricDemandPower.Value" RawData="version=2;" />
+                  </it:TwxChartPen.DataConnectionConfiguration>
+                </it:TwxChartPen>
+              </it:TwxSeries.Pens>
+            </it:TwxSeries>
+          </it:TwxChartComponent.Series>
+        </it:TwxChartComponent>
+      </iwc:MultipleTabItem>
+    </it:TwxViewControl.Items>
+  </it:TwxViewControl>
+  <it:TwxViewControl FileVersion="10.93.175.00" FontFamily="Segoe UI" FontSize="12" Width="541" Height="339.666667" AllowDrop="True" Canvas.Left="599.000001" Canvas.Top="643">
+    <it:TwxViewControl.Items>
+      <iwc:MultipleTabItem IsSelected="True" Header="Tab">
+        <it:TwxChartComponent LegendHeaderBorder="#FFAAAAAA" LegendHeaderForeground="#FF000000" LegendHeaderBackground="#FFDDDDDD" LegendActiveSelectionBackground="#883399FF" LegendActiveSelectionForeground="#FFFFFFFF" LegendInactiveSelectionBackground="#88EEEEEE" LegendInactiveSelectionForeground="#FF333333" LegendRowBackground="{x:Null}" LegendRowForeground="#FF000000" LegendBackground="#FFFFFFFF" Title="ChartView" ChartBackground="#FFFFFFFF" ChartInnerBackground="#FFFFFFFF" ChartInnerBorder="#FF000000" SplitterColor="#FFF2F2F2" CursorStroke="#883399FF" SecondCursorStroke="#88F79646" GridXStroke="#FFAAAAAA" GridYStroke="#FFAAAAAA" SummaryTrendPeriodAlignment="Minute" SummaryTrendPeriodValue="15" SummaryChartWidth="100" SummaryCursorStroke="#88444444" SummaryCursorFill="#88CCCCCC" ShowSummaryScrollbar="False" TrendPeriodAlignment="Minute" TrendPeriodValue="5" RefreshRateAlignment="Second" SamplingIntervalAlignment="Second" HistoryRefreshRateAlignment="Second" HistoryRefreshRateValue="5" ZoomFill="#883399FF" FontStyle="Normal" FontWeight="Normal">
+          <it:TwxChartComponent.SummaryTrendAxis>
+            <it:TwxAxis LabelForeground="#FF000000" />
+          </it:TwxChartComponent.SummaryTrendAxis>
+          <it:TwxChartComponent.Series>
+            <it:TwxSeries Settings="{x:Null}">
+              <it:TwxSeries.Pens>
+                <it:TwxChartPen AutoQualityStyle="True" InheritQualityPlotMode="True" ShowPenMarker="True" RangeMinimumMode="Manual" RangeMaximumMode="Manual" RangeMode="Default" ManualRangeMinimumTag="23" ManualRangeMaximumTag="30" Stroke="#FFAD7B27" Fill="#FFE6C58E">
+                  <it:TwxChartPen.DataConnectionConfiguration>
+                    <idd:DataConnectorConfiguration PointName="@Matrikon.OPC.Simulation.1\EPSimServer.EnergyPlus.Inputs.clgsetp.Value" RawData="version=2;" />
+                  </it:TwxChartPen.DataConnectionConfiguration>
+                </it:TwxChartPen>
+              </it:TwxSeries.Pens>
+            </it:TwxSeries>
+          </it:TwxChartComponent.Series>
+        </it:TwxChartComponent>
+      </iwc:MultipleTabItem>
+    </it:TwxViewControl.Items>
+  </it:TwxViewControl>
+</Canvas>

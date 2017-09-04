@@ -1,17 +1,17 @@
-===== C:\EnergyPlusV8-1-0\RunEplus (Run EnergyPlus) C:\Users\Expresso Logic\Documents\GitHub\DPC-IAX-Iconics\EplusBuildings\LargeOfficeFUN\LargeOfficeFUN SPtMasterTable_587017_2012_amy ===== Start =====
+===== C:\EnergyPlusV8-1-0\RunEplus (Run EnergyPlus) C:\Users\Expresso Logic\Documents\GitHub\DPC-IAX-Iconics\EplusBuildings\LargeOffice\LargeOfficeFUN SPtMasterTable_587017_2012_amy ===== Start =====
         1 file(s) copied.
 ExpandObjects Started.
 No expanded file generated.
-ExpandObjects Finished. Time:     0.094
+ExpandObjects Finished. Time:     0.062
         1 file(s) copied.
 Running C:\EnergyPlusV8-1-0\EnergyPlus.exe
-Input File  : C:\Users\Expresso Logic\Documents\GitHub\DPC-IAX-Iconics\EplusBuildings\LargeOfficeFUN\LargeOfficeFUN.idf
+Input File  : C:\Users\Expresso Logic\Documents\GitHub\DPC-IAX-Iconics\EplusBuildings\LargeOffice\LargeOfficeFUN.idf
 Output Files: 
 IDD file    : C:\EnergyPlusV8-1-0\Energy+.idd
 Weather File: C:\EnergyPlusV8-1-0\WeatherData\SPtMasterTable_587017_2012_amy.epw
 Begin EnergyPlus processing . . . 
  EnergyPlus Starting
- EnergyPlus-Windows-64 8.1.0.009, YMD=2017.08.31 15:50
+ EnergyPlus-Windows-64 8.1.0.009, YMD=2017.09.03 20:22
  Processing Data Dictionary
  Processing Input File
  Initializing Response Factors
@@ -87,7 +87,7 @@ Begin EnergyPlus processing . . .
  Starting Simulation at 07/01 for 587017 587017 587017 TMY2 WMO#=587017
  ExternalInterface starts first data exchange.
  **FATAL:Error in ExternalInterface: Check EnergyPlus *.err file.
- EnergyPlus Run Time=00hr 37min 40.37sec
+ EnergyPlus Run Time=03hr 33min 45.23sec
  ReadVarsESO program starting.
  EOF encountered on eplusout.eso while reading data
  probable EnergyPlus error condition -- check eplusout.err
@@ -97,7 +97,7 @@ Begin EnergyPlus processing . . .
  EOF encountered on eplusout.eso while reading data
  probable EnergyPlus error condition -- check eplusout.err
  ReadVarsESO program terminated.
- ReadVars Run Time=00hr 00min  0.02sec
+ ReadVars Run Time=00hr 00min  0.03sec
   Started HVAC Diagram
   Complete
         1 file(s) moved.
@@ -116,4 +116,4 @@ Begin EnergyPlus processing . . .
         1 file(s) moved.
         1 file(s) moved.
 Removing extra files . . .
-===== C:\EnergyPlusV8-1-0\RunEplus C:\Users\Expresso Logic\Documents\GitHub\DPC-IAX-Iconics\EplusBuildings\LargeOfficeFUN\LargeOfficeFUN ===== Complete =====
+===== C:\EnergyPlusV8-1-0\RunEplus C:\Users\Expresso Logic\Documents\GitHub\DPC-IAX-Iconics\EplusBuildings\LargeOffice\LargeOfficeFUN ===== Complete =====

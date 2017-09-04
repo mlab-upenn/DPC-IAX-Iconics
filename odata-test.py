@@ -161,6 +161,7 @@ else:
 	start_sim_time = time.clock()
 	days = int(sim_total_days())
 
+	timeSteps = 0
 	while timeSteps < 288 * days:
 		if timeSteps % 12 == 0:
 			print(timeSteps)
@@ -182,7 +183,6 @@ else:
 
 		start_w = time.clock()
 
-		print("Writing To OData")
 		if timeSteps % 288 < 12 * 14:
 			write_everything(6.3, 0.8, 26, timeSteps)
 		elif timeSteps % 288 < 12 * 16:
@@ -209,9 +209,8 @@ else:
 		start_r = time.clock()
 		
 
-		print("Reading Power")
 		power = get_power()
-
+		outputs.append(power)
 
 
 
@@ -221,6 +220,9 @@ else:
 
 	end_sim_time = time.clock()
 	control_bridge(2)
+	plot.plot(outputs)
+	plot.show()
+
 	print("AVERAGE Write Time: " + str(sum_write_time/float(i)))
 	print("AVERAGE Read Time: " + str(sum_read_time/float(i)))	
 	print("AVERAGE Time Time: " + str(sum_time_time/float(i)))
