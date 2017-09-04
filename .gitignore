@@ -1,7 +1,6 @@
 *.end
 *.audit
 *.bnd
-*.csv
 *.eio
 *.err
 *.eso
