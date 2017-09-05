@@ -24,7 +24,7 @@ class ep_process:
 			idf_path = building_path + '/' + idf[:-4]
 			self.p = subprocess.Popen([eplus_script, idf_path, weather], stdout=FNULL)
 
-		print(eplus_script, building_path, 'SPtMasterTable_587017_2012_amy')
+		print(eplus_script, building_path, weather)
 		
 		s = socket.socket()
 		s.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1) 
@@ -101,7 +101,6 @@ class ep_process:
 	def decode_packet_simple(self, packet):
 		comp = packet.split(" ")
 		comp = comp[:-1]
-		print(comp)
 		comp_values = [float(s) for s in comp]
 		output = []
 		if comp_values[0] == 2: #Version 2

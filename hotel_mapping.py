@@ -26,7 +26,7 @@ def map_inputs():
 	'EPSimServer.EnergyPlus.Inputs.kclgsetp',
 	'EPSimServer.EnergyPlus.Inputs.khtsetp',
 	'EPSimServer.EnergyPlus.Inputs.gclgsetp',
-	'EPSimServer.EnergyPlus.Inputs.ghtetp',	
+	'EPSimServer.EnergyPlus.Inputs.ghtsetp',	
 	'EPSimServer.EnergyPlus.Inputs.airsetp',
 	'EPSimServer.EnergyPlus.Inputs.cwsetp'
 	]

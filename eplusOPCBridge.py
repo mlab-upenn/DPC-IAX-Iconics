@@ -12,7 +12,7 @@ output_tags = opc.list('EPSimServer.EnergyPlus.Outputs.*.*', recursive=True)
 opc.read(input_tags, group = 'inputs')
 
 pyEp.set_bcvtb_home('C:\Python27\Lib\site-packages\pyEp\\bcvtb')
-pyEp.set_energy_plus_dir('C:\EnergyPlusV8-1-0\\')
+pyEp.set_energy_plus_dir('C:\EnergyPlusV8-4-0\\')
 path_to_buildings = 'C:\Users\Expresso Logic\Documents\GitHub\DPC-IAX-Iconics\ePlusBuildings'
 eps = []
 timesteps = []
@@ -58,12 +58,15 @@ while True:
 	elif command is 1: #Simulation
 		for idx, ep in enumerate(eps):
 			start = time.clock()
+			print("Loop")
+			
 			#Get output from EnergyPlus and write to OPC Server
 			#TODO: Update so everything is more automatic, when changing how the OPC Simulated Server is configurated
 			if timesteps[idx] % 12 == 0:
 				print(timesteps[idx])
 			output = ep.decode_packet_simple(ep.read())
-
+			# print("----------Output-----------")
+			# print(output)
 			mapping = building_mapping.map_outputs(output)
 
 			for key,value in mapping.iteritems():
@@ -71,14 +74,10 @@ while True:
 
 			#Wait for controller to update to next time step
 			new_time_step, status, _ = opc.read('EPSimServer.EnergyPlus.Control.TimeStep')		
-			print(new_time_step)
 			if status is 'Error':
 				print("Error Reading TimeStep")
 				continue
-			# print(type(timesteps[idx]))
-			# print(int(timesteps[idx]))
-			# print(type(new_time_step))
-			# print(int(new_time_step))
+
 			start_w = time.clock()
 			while int(timesteps[idx]) == int(new_time_step):
 				new_time_step, status, _ = opc.read('EPSimServer.EnergyPlus.Control.TimeStep')
@@ -89,14 +88,15 @@ while True:
 					break
 			end_w = time.clock()
 			wait_total_time = wait_total_time + (end_w - start_w)
+
 			#Read new inputs from the controller and give them to EnergyPlus
-			
-			inputs = building_mapping.map_inputs() 
+			inputs = building_mapping.map_inputs()
+			# print("------------Input----------------")			
 			setpoints = []
 			for tag in inputs:
 				setpoint,_,_ = opc.read(tag)
 				setpoints.append(setpoint)
-				
+			# print(setpoints)
 			ep.write(ep.encode_packet_simple(setpoints, new_time_step))
 			timesteps[idx] = new_time_step
 			end = time.clock()
