@@ -4,7 +4,7 @@ The system cannot find the file specified.
         1 file(s) copied.
 ExpandObjects Started.
 No expanded file generated.
-ExpandObjects Finished. Time:     0.156
+ExpandObjects Finished. Time:     0.125
         1 file(s) copied.
         1 file(s) copied.
 Running C:\EnergyPlusV8-4-0\EnergyPlus.exe
@@ -14,7 +14,7 @@ IDD file    : C:\EnergyPlusV8-4-0\Energy+.idd
 Weather File: C:\EnergyPlusV8-4-0\WeatherData\USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw
 Begin EnergyPlus processing . . . 
 EnergyPlus Starting
-EnergyPlus, Version 8.4.0-09f5359d8a, YMD=2017.09.04 21:21
+EnergyPlus, Version 8.4.0-09f5359d8a, YMD=2017.09.13 17:58
 Processing Data Dictionary
 Processing Input File
 Initializing Response Factors
@@ -83,7 +83,7 @@ Initializing New Environment Parameters
 Warming up {1}
 Instantiating Building Controls Virtual Test Bed
 ExternalInterface initializes.
-Number of outputs in ExternalInterface = 9
+Number of outputs in ExternalInterface = 14
 Number of inputs  in ExternalInterface = 8
 Warming up {2}
 Warming up {3}
@@ -96,4 +96,5 @@ Warming up {9}
 Starting Simulation at 08/01 for Chicago Ohare Intl Ap IL USA TMY3 WMO#=725300
 ExternalInterface starts first data exchange.
 **FATAL:Error in ExternalInterface: Check EnergyPlus *.err file.
-EnergyPlus Run Time=00hr 03min  0.59sec
+EnergyPlus Run Time=00hr 59min 56.59sec
+ ReadVarsESO program starting.

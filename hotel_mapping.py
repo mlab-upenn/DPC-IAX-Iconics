@@ -6,6 +6,13 @@ def map_outputs(output):
 	current_month = output[0]
 	drybulb = output[5]
 	humidity = output[6]
+	basement = output[9]
+	corridor = output[10]
+	guest = output[12]
+	kitchen = output[11]
+	lobby = output[13]
+
+
 
 	mapping = {
 		"EPSimServer.EnergyPlus.Outputs.WholeBuilding.FacilityTotalElectricDemandPower" : power,
@@ -14,7 +21,12 @@ def map_outputs(output):
 		'EPSimServer.EnergyPlus.Outputs.EMS.TimeOfDay': time_of_day,
 		"EPSimServer.EnergyPlus.Outputs.EMS.currentMonth" : current_month,
 		'EPSimServer.EnergyPlus.Outputs.Environment.Drybulb' : drybulb,
-		'EPSimServer.EnergyPlus.Outputs.Environment.Humidity' : humidity
+		'EPSimServer.EnergyPlus.Outputs.Environment.Humidity' : humidity,
+		'EPSimServer.EnergyPlus.Outputs.ZoneAirTemperature.Basement' : basement,
+		'EPSimServer.EnergyPlus.Outputs.ZoneAirTemperature.Corridor' : corridor,
+		'EPSimServer.EnergyPlus.Outputs.ZoneAirTemperature.GuestRoom' : guest,
+		'EPSimServer.EnergyPlus.Outputs.ZoneAirTemperature.Kitchen' : kitchen,
+		'EPSimServer.EnergyPlus.Outputs.ZoneAirTemperature.Lobby' : lobby
 	}
 
 	return mapping

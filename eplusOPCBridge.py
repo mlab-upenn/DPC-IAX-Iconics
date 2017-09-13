@@ -57,22 +57,7 @@ while True:
 			break
 	elif command is 1: #Simulation
 		for idx, ep in enumerate(eps):
-			start = time.clock()
-			print("Loop")
-			
-			#Get output from EnergyPlus and write to OPC Server
-			#TODO: Update so everything is more automatic, when changing how the OPC Simulated Server is configurated
-			if timesteps[idx] % 12 == 0:
-				print(timesteps[idx])
-			output = ep.decode_packet_simple(ep.read())
-			# print("----------Output-----------")
-			# print(output)
-			mapping = building_mapping.map_outputs(output)
 
-			for key,value in mapping.iteritems():
-				opc.write((key,value))
-
-			#Wait for controller to update to next time step
 			new_time_step, status, _ = opc.read('EPSimServer.EnergyPlus.Control.TimeStep')		
 			if status is 'Error':
 				print("Error Reading TimeStep")
@@ -99,9 +84,25 @@ while True:
 			# print(setpoints)
 			ep.write(ep.encode_packet_simple(setpoints, new_time_step))
 			timesteps[idx] = new_time_step
-			end = time.clock()
-			sim_total_time = sim_total_time + (end-start)
 			i = i+ 1
+
+
+			print("Loop")
+			
+			#Get output from EnergyPlus and write to OPC Server
+			#TODO: Update so everything is more automatic, when changing how the OPC Simulated Server is configurated
+			if timesteps[idx] % 12 == 0:
+				print(timesteps[idx])
+			output = ep.decode_packet_simple(ep.read())
+			print("----------Output-----------")
+			print(output)
+			mapping = building_mapping.map_outputs(output)
+
+			for key,value in mapping.iteritems():
+				opc.write((key,value))
+
+			#Wait for controller to update to next time step
+			
 	prev_command = command
 
 print("BRIDGE COLLAPSED")

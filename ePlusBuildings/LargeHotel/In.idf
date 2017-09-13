@@ -13151,3 +13151,5 @@
   Output:Variable,Kitchen_HTGSETP_SCH,Schedule Value,TimeStep;
 
   Output:Variable,Guest_HTGSETP_SCH,Schedule Value,TimeStep;
+
+  Output:Variable,*,Zone Air Temperature,TimeStep;

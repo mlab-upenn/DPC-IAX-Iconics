@@ -36,7 +36,7 @@ print('order of AR: %s' %orderAR)
 print('control horizon: %s' %ctrlHzn)
 
 n_samples = 1000
-n_test_samples = 200
+n_test_samples = 1000
 
 plot_results = True
 save_results = True
