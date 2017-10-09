@@ -84,7 +84,7 @@ def write_strategy(predict, strategy_name):
 	requests.post("http://localhost/ODataConnector/rest/RealtimeData/Write", headers=  headers, data = json.dumps(payload))
 
 
-def read_outputs():
+def  read_outputs():
 	output_tags = ["http://localhost/ODataConnector/rest/RealtimeData?PointName=@Matrikon.OPC.Simulation.1\\EPSimServer.EnergyPlus.Outputs.WholeBuilding.FacilityTotalElectricDemandPower.Value",
 	"http://localhost/ODataConnector/rest/RealtimeData?PointName=@Matrikon.OPC.Simulation.1\\EPSimServer.EnergyPlus.Outputs.EMS.DayOfWeek.Value",
 	"http://localhost/ODataConnector/rest/RealtimeData?PointName=@Matrikon.OPC.Simulation.1\\EPSimServer.EnergyPlus.Outputs.EMS.TimeOfDay.Value",
@@ -139,14 +139,13 @@ def gp_predict(kStep, X_c, X_d):
 	return y_mean[0][0], y_std[0]
 
 
-
-if len(sys.argv) > 1 :
+if len(sys.argv) == 2:
 	start = time.clock()
 	status = int(get_status())
 	end = time.clock()
 	print(end-start)
 	command = sys.argv[1]
-
+	#python odataSimulator.py control setup
 	if command == "setup":
 		if status is 2 or status is 1:
 			control_bridge(3)
@@ -164,7 +163,7 @@ if len(sys.argv) > 1 :
 
 
 else:
-	
+	#python odataSimulator.py setup
 	status = int(get_status())
 	print(status)
 	if status is not 0:
@@ -172,8 +171,15 @@ else:
 		sys.exit(0)
   
 	control_bridge(1)
-	   
+	supported_queries = ["baseline", "strategy"]
+
 	query_type = "strategy"
+	if len(sys.argv) > 2 and sys.argv[1] == "sim":
+		query_type = sys.argv[2]
+
+	if query_type not in supported_queries:
+		query_type = supported_queries[0]
+
 	print(query_type)
 	if query_type is "baseline" or query_type is "strategy":
 		model, normalizer_c, normalizer_d, normalizer_y = load_baseline_model("LargeHotel", 1000)    
@@ -224,16 +230,16 @@ else:
 			# 	print(X_d)
 			# 	print(X_c)
 
-			if kStep > 95 and kStep < 102:
-				print("KStep : %s" % (kStep))
-				print("Prediction, Std", (y_mean, y_std))
-				print("Day Time", dayTime)
-				print("Time", time)
-				print("Actual", outputs[kStep-1][0])
-				print("X_d:")
-				print(X_d)
-				print("X_c:")
-				print(X_c)
+			# if kStep > 95 and kStep < 102:
+			# 	print("KStep : %s" % (kStep))
+			# 	print("Prediction, Std", (y_mean, y_std))
+			# 	print("Day Time", dayTime)
+			# 	print("Time", time)
+			# 	print("Actual", outputs[kStep-1][0])
+			# 	print("X_d:")
+			# 	print(X_d)
+			# 	print("X_c:")
+			# 	print(X_c)
 
 			write_prediction(y_mean, y_mean-2*y_std, y_mean+2*y_std)
 			predictions.append([y_mean, y_std])
@@ -267,16 +273,16 @@ else:
 				X_d = np.array([])			
 			y_mean, y_std = gp_predict(kStep, X_c, X_d)
 
-			if y_std > 30000 or kStep > 95 and kStep < 102:
-				print("KStep : %s" % (kStep))
-				print("Prediction, Std", (y_mean, y_std))
-				print("Day Time", dayTime)
-				print("Time", time)
-				print("Actual", outputs[kStep-1][0])
-				print("X_d:")
-				print(X_d)
-				print("X_c:")
-				print(X_c)
+			# if y_std > 30000 or kStep > 95 and kStep < 102:
+			# 	print("KStep : %s" % (kStep))
+			# 	print("Prediction, Std", (y_mean, y_std))
+			# 	print("Day Time", dayTime)
+			# 	print("Time", time)
+			# 	print("Actual", outputs[kStep-1][0])
+			# 	print("X_d:")
+			# 	print(X_d)
+			# 	print("X_c:")
+			# 	print(X_c)
 
 			write_prediction(y_mean, y_mean-2*y_std, y_mean+2*y_std)
 			predictions.append([y_mean, y_std])
