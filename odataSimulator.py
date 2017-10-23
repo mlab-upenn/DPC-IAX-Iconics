@@ -58,6 +58,7 @@ def start_simulation(start):
 
 def control_bridge(value):
 	payload = [ { "PointName": "@Matrikon.OPC.Simulation.1\\EPSimServer.EnergyPlus.Control.Status.Value", "Value": value }]
+	print(payload)
 	requests.post("http://localhost/ODataConnector/rest/RealtimeData/Write", headers=  headers, data = json.dumps(payload))
 
 
@@ -81,6 +82,7 @@ def write_prediction(predict, lower, upper):
 
 def write_strategy(predict, strategy_name):
 	payload = [ { "PointName": "@Matrikon.OPC.Simulation.1\\EPSimServer.EnergyPlus.DPC.%s.Value" % strategy_name, "Value": predict }]
+
 	requests.post("http://localhost/ODataConnector/rest/RealtimeData/Write", headers=  headers, data = json.dumps(payload))
 
 

@@ -5,22 +5,25 @@ import subprocess
 import os
 
 class ep_process:
-	def __init__(self, ip, port, building_path, weather, isWindows=False):
-		print("Starting E+")
+	def __init__(self, ip, port, building_path, weather, isWindows=False, ePlus_path=None):
+		print("Starting E+ at path", ePlus_path)
 		FNULL = open('epluslog', 'w')
-		global eplus_dir
+		if ePlus_path is None:
+			global eplus_dir
+			ePlus_path = eplus_dir
+
 		for file in os.listdir(building_path):
 			if file.endswith('.idf'):
 				idf = file
 				break
 
 		if isWindows:
-			eplus_script = eplus_dir + 'RunEplus'
+			eplus_script = ePlus_path + 'RunEplus'
 			idf_path = building_path + '\\' + idf[:-4]
 			print(idf_path)
 			self.p = subprocess.Popen([eplus_script, idf_path, weather], stdout=FNULL, shell=True, cwd=building_path)		
 		else:
-			eplus_script = eplus_dir + 'runenergyplus'
+			eplus_script = ePlus_path + 'runenergyplus'
 			idf_path = building_path + '/' + idf[:-4]
 			self.p = subprocess.Popen([eplus_script, idf_path, weather], stdout=FNULL)
 

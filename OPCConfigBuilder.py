@@ -40,14 +40,25 @@ with cd(var_config_path):
 		with cd(var_config_path		 + "/" + building):
 			tree = ET.parse('variables.cfg')
 			root = tree.getroot()
+			control = []
 			inputs = []
 			outputs = {}
 			unknowns = []
 
+
+			control_tags = []
 			input_tags = []
 			num_inputs = 0
 			output_tags = []
 			num_outputs = 0
+
+			control.append("TimeStep")
+			control_tags.append(opc_append(OPC_prefix, ["Control", "TimeStep"]))
+			control.append("InputRdy")
+			control_tags.append(opc_append(OPC_prefix, ["Control", "InputRdy"]))
+			control.append("OutputRdy")
+			control_tags.append(opc_append(OPC_prefix, ["Control", "OutputRdy"]))
+
 			for bcvtb_var in root:
 				input_type = bcvtb_var.attrib["source"]
 				if input_type == "Ptolemy":
@@ -65,48 +76,50 @@ with cd(var_config_path):
 							outputs[output_group] = []
 						outputs[output_group].append(var_type)
 
-						output_tags.append(opc_append(OPC_prefix, [output_group, var_type]))
+						output_tags.append(opc_append(OPC_prefix, ["Outputs", output_group, var_type]))
 					elif var_name == "ENVIRONMENT" or var_name == "Environment":
 						output_group = "Environment"
 						if output_group not in outputs:
 							outputs[output_group] = []
 						outputs[output_group].append(var_type)
 
-						output_tags.append(opc_append(OPC_prefix, [output_group, var_type]))
+						output_tags.append(opc_append(OPC_prefix, ["Outputs", output_group, var_type]))
 					elif var_name == "Whole Building":
 						output_group = "WholeBuilding"
 						if output_group not in outputs:
 							outputs[output_group] = []
 						outputs[output_group].append(var_type)
 
-						output_tags.append(opc_append(OPC_prefix, [output_group, var_type]))
+						output_tags.append(opc_append(OPC_prefix, ["Outputs", output_group, var_type]))
 					elif var_type == "Zone Air Temperature":
 						output_group = "ZoneAirTemp"
 						if output_group not in outputs:
 							outputs[output_group] = []
 						outputs[output_group].append(var_name) #NOTE: VAR_NAME not var_type
 
-						output_tags.append(opc_append(OPC_prefix, [output_group, var_name]))						
+						output_tags.append(opc_append(OPC_prefix, ["Outputs", output_group, var_name]))						
 					elif var_type == "Schedule Value":
 						output_group = "Schedule"
 						if output_group not in outputs:
 							outputs[output_group] = []
 						outputs[output_group].append(var_name)
 
-						output_tags.append(opc_append(OPC_prefix, [output_group, var_name]))						
+						output_tags.append(opc_append(OPC_prefix, ["Outputs", output_group, var_name]))						
 					elif "Chiller" in var_type or "Boiler" in var_type:
 						output_group = "EquipTemp"
 						if "EquipTemp" not in outputs:
 							outputs["EquipTemp"] = []
 						outputs["EquipTemp"].append(var_name)
 
-						output_tags.append(opc_append(OPC_prefix, [output_group, var_name]))												
+						output_tags.append(opc_append(OPC_prefix, ["Outputs", output_group, var_name]))												
 					else:
 						unknowns.append(var_name + var_type)
 			configs[building]["Inputs"] = inputs
 			configs[building]["Outputs"] = outputs
 			configs[building]["Unknown"] = unknowns
+			configs[building]["Control"] = control
 
+			mapping[building]["Control"] = control_tags
 			mapping[building]["Inputs"] = input_tags
 			mapping[building]["Outputs"] = output_tags
 
@@ -140,12 +153,18 @@ CSimRootDevLink.set("description", "Sim Server Root")
 PSTAlias = ET.SubElement(matrikon, "PSTAliasGroup")
 EpSimServer = addSubElement(PSTAlias, "EPSimServer")
 EP = addSubElement(EpSimServer, "EnergyPlus")
+addTag(EP, "Status") #Add Status Control Tag 
 Buildings = addSubElement(EP, "Buildings")
 
 for building_name in configs.keys():
 	building = configs[building_name]
 	Building = addSubElement(Buildings, building_name)
 	
+	control = building["Control"]
+	Control = addSubElement(Building, "Control")
+	for ctr in control:
+		addTag(Control, ctr)
+
 	setpoints = building["Inputs"]
 	Inputs = addSubElement(Building, "Inputs")
 	for setpoint in setpoints:

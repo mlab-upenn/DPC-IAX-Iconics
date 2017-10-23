@@ -1,27 +1,9 @@
 *** BCVTB client log file.
 *************************.
-Writing to socket at time = 4.320000e+005
+Writing to socket at time = 0.000000e+000
 Assembling buffer.
-Write to socket with fd = 340
-Buffer        = 2 0 14 0 0 4.320000000000000e+005 8.000000000000000e+000 5.000000000000000e+000 2.400000000000000e+001 3.000000000000000e+000 0.000000000000000e+000 2.220000000000000e+001 7.300000000000000e+001 1.036608421004223e+005 1.848791993161731e+005 2.367987709350997e+001 2.762208898708007e+001 2.330074114943094e+001 2.400026217007840e+001 2.288756963607796e+001 
+Write to socket with fd = 356
+Buffer        = 2 0 14 0 0 0.000000000000000e+000 8.000000000000000e+000 1.000000000000000e+000 2.400000000000000e+001 6.000000000000000e+000 0.000000000000000e+000 1.830000000000000e+001 9.000000000000000e+001 8.425852236290803e+004 1.654155048682675e+005 2.338702285192446e+001 2.674812031747003e+001 2.174909526734855e+001 2.400006488779363e+001 2.191884896020558e+001 
 
 Wrote 357 characters to socket.
 Reading from socket.
-In readbufferfromsocket: Read 4 chars, maximum is 21798.
-Error while disassembling the header of the buffer.
-Disassembled buffer.
-Finished exchanging data with socket: simTimRea=1.336857e-312, flag=1.
-Assembling buffer.
-Write to socket with fd = 340
-Buffer        = 2 -20 
-
-Wrote 7 characters to socket.
-sendclientmessage wrote flag -20, return value = 7.
-In readbufferfromsocket: Read -1 chars, maximum is 21798.
-Assembling buffer.
-Write to socket with fd = 340
-Buffer        = 2 -1 
-
-Error writing to socket: Return value = -1.
-Error writing to socket: WSAGetLastError = 10053
-sendclientmessage wrote flag -1, return value = -1.

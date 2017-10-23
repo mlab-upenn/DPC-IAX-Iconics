@@ -3,7 +3,7 @@ with open("mapping.json", 'r') as f:
 	s = f.read()
 	mapping = json.loads(s)
 
-def map_output(building_name, outputs):
+def map_outputs(building_name, outputs):
 
 	"""
 	Maps outputs from EnergyPlus to OPC tags
@@ -21,7 +21,7 @@ def map_output(building_name, outputs):
 
 	return ret
 
-def map_input(building_name, inputs):
+def map_inputs(building_name, inputs):
 	"""
 	Maps inputs from OPC server to EnergyPlus
 
@@ -34,8 +34,8 @@ def map_input(building_name, inputs):
 	input_tags = mapping[building_name]["Inputs"]
 	ret = []
 	for tag in input_tags:
-		matching_input = next(t for t in inputs if t[0] == tag)
-		ret.append(matching_input[2])
+		matching_input = [t for t in inputs if t[0] == tag]
+		ret.append(matching_input[0][1])
 
 	return ret
 

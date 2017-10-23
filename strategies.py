@@ -1,4 +1,4 @@
-def strategy1(time):
+def strategy1(building_name, time):
 	if time <= 7*3600:
 		clgstp = 30
 		htgstp = 16
@@ -36,30 +36,36 @@ def strategy2(time):
 def strategy3(time):
 	pass
 
-def baseline(time):
-	if time <= 7*3600:
-		
-		clgstp = 30
-		htgstp = 16
-		kitclgstp = 30
-		kithtgstp = 16
-		guestclgstp = 24
-		guesthtgstp = 21
-		sat = 13
-		cwstp = 6.7
+def baseline(building_name, time):
+	if "LargeHotel" in building_name: 
+		if time <= 7*3600:
+			clgstp = 30
+			htgstp = 16
+			kitclgstp = 30
+			kithtgstp = 16
+			guestclgstp = 24
+			guesthtgstp = 21
+			sat = 13
+			cwstp = 6.7
+		else:
+			clgstp = 24
+			htgstp = 21
+			kitclgstp = 26
+			kithtgstp = 19
+			guestclgstp = 24
+			guesthtgstp = 21
+			sat = 13
+			cwstp = 6.7
+		#NOTE: Must matching ordering specified in variables.cfg/mapping.json
+		return [clgstp, htgstp, kitclgstp, kithtgstp, guestclgstp, guesthtgstp, sat, cwstp]
 
-	else:
-		
-		clgstp = 24
-		htgstp = 21
-		kitclgstp = 26
-		kithtgstp = 19
-		guestclgstp = 24
-		guesthtgstp = 21
-		sat = 13
-		cwstp = 6.7
-
-	return (clgstp, kitclgstp, guestclgstp, sat, cwstp, htgstp, kithtgstp, guesthtgstp)
+	if "LargeOffice" in building_name:
+		clg = 26.7
+		cw = 6.7
+		lil = 0.7
+		return [clg, cw, lil]
 
 
+def default(building_name, time):
+	return baseline(building_name, time)
 
