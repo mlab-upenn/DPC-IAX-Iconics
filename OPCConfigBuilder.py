@@ -153,7 +153,13 @@ CSimRootDevLink.set("description", "Sim Server Root")
 PSTAlias = ET.SubElement(matrikon, "PSTAliasGroup")
 EpSimServer = addSubElement(PSTAlias, "EPSimServer")
 EP = addSubElement(EpSimServer, "EnergyPlus")
-addTag(EP, "Status") #Add Status Control Tag 
+ #Add Status Control Tag 
+addTag(EP, "Status")
+#Add Total Consumption Tag
+addTag(EP, "TotalPower")
+#Add LMP Tag
+addTag(EP, "LMP")
+
 Buildings = addSubElement(EP, "Buildings")
 
 for building_name in configs.keys():

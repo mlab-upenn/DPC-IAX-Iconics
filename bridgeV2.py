@@ -3,6 +3,7 @@ import pyEp
 import tag_mapping
 import json
 import sys
+import time as delay
 
 with open("mapping.json", 'r') as f:
 	s = f.read()
@@ -95,7 +96,9 @@ while True:
 			print("Reset")
 			for building in buildings:
 				building.ep.close()
+				delay.sleep(1)
 			buildings = []
+			delay.sleep(1)
 		elif command is 4: #close
 			print("Closing")
 			for building in buildings:

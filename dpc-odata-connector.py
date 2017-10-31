@@ -3,6 +3,9 @@ import strategies
 import sys
 import requests
 import time as delay
+import datetime
+import hh_import
+import matplotlib.pyplot as plt
 
 with open("mapping.json", 'r') as f:
 	s = f.read()
@@ -82,7 +85,6 @@ def ts_synced(pairs):
 	payload = build_payload_read(ts_tags)
 	tss = read(payload)
 	#Determine if they are all equal
-	print(tss)
 	first_ts = tss[0]
 	for ts in tss:
 		if not ts == first_ts:
@@ -131,9 +133,12 @@ ts_pairs = ts_synced_pairs() #[(building_name, endpoint)]
 
 output_history = {}
 input_history = {}
+power_history = {}
 for building_name in mapping.keys():
 	input_history[building_name] = []
 	output_history[building_name] = []
+	power_history[building_name] = []
+
 
 print(output_ready_pairs)
 print(ts_pairs)
@@ -183,17 +188,19 @@ elif command == "run":
 
 	write_status(1)
 
-	""" Simulation Loop """
+	""" Simulation Loop """	
 	#INVARIANT: All energyplus buildings are on the same timestep, should have same timesteps per hour
 	print("Running Simulation")
 
 	EPTimeStep = 4
-	SimDays = 5
+	SimDays = 8
 	kStep = 1
 	MAXSTEPS = SimDays*24*EPTimeStep
 	deltaT = (60/EPTimeStep)*60;
 
 	num_buildings = len(mapping.keys())
+
+	print(MAXSTEPS)
 
 	while kStep < MAXSTEPS:
 
@@ -203,6 +210,7 @@ elif command == "run":
 		time = kStep * deltaT
 		dayTime = time % 86400
 
+		print(kStep)
 		while not is_synced or was_synced:
 			# print("Wating for Building")
 			#Determine if a building has outputs that can be read
@@ -240,7 +248,6 @@ elif command == "run":
 				# print(input_group)
 				# print(time_tag)
 				print(setpoints)
-				print(time)
 				write_inputs(input_group, setpoints, time_tag, time)
 
 				toggle_ready(ready_building)
@@ -248,6 +255,7 @@ elif command == "run":
 				output_tags = output_group(ready_building)
 				output_values = read_outputs(output_tags)
 				output_history[ready_building].append(output_values)
+				power_history[ready_building].append(output_values[8])
 
 
 				#Edge case in which a single building is always in sync with itself, but kStep should increase
@@ -260,4 +268,22 @@ elif command == "run":
 			was_synced = is_synced
 			is_synced = ts_synced(ts_pairs)
 
+
+		total_consumption = sum([power_history[building][kStep-1] for building in mapping.keys()])	
+		write(build_payload_write(["EPSimServer.EnergyPlus.TotalPower"], [total_consumption]))
+
 		kStep = kStep + 1
+
+	start_time = datetime.datetime(2017, 10, 27, 22, 30, 0)
+	time_range = [start_time + datetime.timedelta(minutes = 15*i) for i in range(0, int(MAXSTEPS))]
+
+	print(len(time_range))
+	print(time_range)
+	path = 'C:\Users\Expresso Logic\Documents\GitHub\DPC-IAX-Iconics\HHImport\Source\\'
+ 	tag_name = 	"ua:HyperHistorian\\\\Configuration/EnergyPlus/Hotel1_Prediction"
+
+	importer = hh_import.hh_import("Hotel", path, tag_name)
+	importer.export(time_range, power_history["LargeHotel"])
+
+	plt.plot(power_history["LargeHotel"])
+	plt.show()
