@@ -105,7 +105,7 @@
     ,                        !- Name
     8,                       !- Begin Month
     1,                       !- Begin Day of Month
-    8,                       !- End Month
+    8,                       !- End Monthly
     31,                      !- End Day of Month
     Friday,                  !- Day of Week for Start Day
     No,                      !- Use Weather File Holidays and Special Days
@@ -258,16 +258,16 @@
 ! WeatherFileName=USA_IL_Chicago-OHare_TMY2.epw
 
   Site:Location,
-    USA IL-CHICAGO-OHARE,    !- Name
-    41.77,                   !- Latitude {deg}
-    -87.75,                  !- Longitude {deg}
-    -6.00,                   !- Time Zone {hr}
-    190;                     !- Elevation {m}
+    USA NY-NewYork-CentralPark,    !- Name
+    40.78,                   !- Latitude {deg}
+    -73.96,                  !- Longitude {deg}
+    -5.00,                   !- Time Zone {hr}
+    41;                     !- Elevation {m}
 
  ! CHICAGO_IL_USA Annual Heating 99.6%, MaxDB=-20.6?C
 
   SizingPeriod:DesignDay,
-    CHICAGO Ann Htg 99.6% Condns DB,  !- Name
+    NEWYORK Ann Htg 99.6% Condns DB,  !- Name
     1,                       !- Month
     21,                      !- Day of Month
     WinterDesignDay,         !- Day Type
@@ -297,7 +297,7 @@
  ! CHICAGO_IL_USA Annual Cooling (WB=>MDB) .4%, MDB=31.2?C WB=25.5?C
 
   SizingPeriod:DesignDay,
-    CHICAGO Ann Clg .4% Condns WB=>MDB,  !- Name
+    NEWYORK Ann Clg .4% Condns WB=>MDB,  !- Name
     7,                       !- Month
     21,                      !- Day of Month
     SummerDesignDay,         !- Day Type

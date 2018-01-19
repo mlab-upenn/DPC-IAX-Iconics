@@ -13,8 +13,10 @@ class socket_builder:
 		with cd(self.path):
 			buildings = next(os.walk('.'))[1]
 			configs = []
+			print(self.path)
+			print(buildings)
 			for building in buildings:
-				with cd(self.path + "/" + building):
+				with cd(os.path.join(self.path, building)):
 					idf = None
 					for file in os.listdir('.'):
 						if file.endswith('.idf'):

@@ -6,7 +6,8 @@ import os
 
 class ep_process:
 	def __init__(self, ip, port, building_path, weather, isWindows=False, ePlus_path=None):
-		print("Starting E+ at path", ePlus_path)
+		print("Using E+ at Path:", ePlus_path)
+		print("Using Buildings in Directory", building_path)
 		FNULL = open('epluslog', 'w')
 		if ePlus_path is None:
 			global eplus_dir
