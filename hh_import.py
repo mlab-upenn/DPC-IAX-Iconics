@@ -27,8 +27,8 @@ class hh_import:
 if __name__ == "__main__":
 	name = "Hotel"
 	path = 'C:\Users\Expresso Logic\Documents\GitHub\DPC-IAX-Iconics\HHImport\Source\\'
-	tag_name = 	"ua:HyperHistorian\\\\Configuration/EnergyPlus/Hotel1_Prediction"
+	tag_name = 	"ua:HyperHistorian\\\\Configuration/EnergyPlus/LMP"
 	importer = hh_import(name, path, tag_name)
-	start = datetime.datetime(2017, 6, 3, 7, 6, 0)
-	value = 10
+	start = datetime.datetime(2018, 2, 7, 16, 0, 0)
+	value = 100
 	importer.export([start], [value])
